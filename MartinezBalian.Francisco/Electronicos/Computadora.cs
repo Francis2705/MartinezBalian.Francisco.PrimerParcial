@@ -61,8 +61,8 @@ namespace Electronicos
         }
 
         //Constructores
-        public Computadora(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil)
-            : base(precio, medida, nombre, descripcion, tipoOrigen)
+        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil)
+            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
         {
             this.esTactil = esTactil;
             this.cantidadNucleos = 2;
@@ -70,15 +70,15 @@ namespace Electronicos
             this.espacioDiscoHDD = 200;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Computadora(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
-            double espacioDiscoSSD, double espacioDiscoHDD) : this(precio, medida, nombre, descripcion, tipoOrigen, esTactil)
+        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
+            double espacioDiscoSSD, double espacioDiscoHDD) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, esTactil)
         {
             this.espacioDiscoSSD = espacioDiscoSSD;
             this.espacioDiscoHDD = espacioDiscoHDD;
         }
         //Sobrecarga de uno menos ↑
-        public Computadora(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
-            double espacioDiscoSSD, double espacioDiscoHDD, int cantidadNucleos) : this(precio, medida, nombre, descripcion, tipoOrigen,
+        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
+            double espacioDiscoSSD, double espacioDiscoHDD, int cantidadNucleos) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen,
                 esTactil, espacioDiscoSSD, espacioDiscoHDD)
         {
             this.cantidadNucleos = cantidadNucleos;

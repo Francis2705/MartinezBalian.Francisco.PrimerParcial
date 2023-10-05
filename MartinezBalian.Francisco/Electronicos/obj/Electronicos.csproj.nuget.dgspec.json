@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\franc\\source\\repos\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj": {}
+    "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj": {}
   },
   "projects": {
-    "C:\\Users\\franc\\source\\repos\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj": {
+    "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\franc\\source\\repos\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj",
+        "projectUniqueName": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj",
         "projectName": "Electronicos",
-        "projectPath": "C:\\Users\\franc\\source\\repos\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj",
+        "projectPath": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\MartinezBalian.Francisco\\Electronicos\\Electronicos.csproj",
         "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\franc\\source\\repos\\MartinezBalian.Francisco\\Electronicos\\obj\\",
+        "outputPath": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\MartinezBalian.Francisco\\Electronicos\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

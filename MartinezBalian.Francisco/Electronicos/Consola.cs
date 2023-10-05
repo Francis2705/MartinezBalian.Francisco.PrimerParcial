@@ -61,8 +61,8 @@ namespace Electronicos
         }
 
         //Constructores
-        public Consola(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
-            : base(precio, medida, nombre, descripcion, tipoOrigen)
+        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
+            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
         {
             this.aceptaDiscosFisicos = aceptaDiscosFisicos;
             this.memoriaTotal = 256;
@@ -70,15 +70,15 @@ namespace Electronicos
             this.velocidadCargaMB = 10;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Consola(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
-            short velocidadDescargaMB, short velocidadCargaMB) : this(precio, medida, nombre, descripcion, tipoOrigen, aceptaDiscosFisicos)
+        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
+            short velocidadDescargaMB, short velocidadCargaMB) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, aceptaDiscosFisicos)
         {
             this.velocidadDescargaMB = velocidadDescargaMB;
             this.velocidadCargaMB = velocidadCargaMB;
         }
         //Sobrecarga de uno menos ↑
-        public Consola(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
-            short velocidadDescargaMB, short velocidadCargaMB, double memoriaTotal) : this(precio, medida, nombre, descripcion, tipoOrigen, 
+        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
+            short velocidadDescargaMB, short velocidadCargaMB, double memoriaTotal) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, 
                 aceptaDiscosFisicos, velocidadDescargaMB, velocidadCargaMB)
         {
             this.memoriaTotal = memoriaTotal;

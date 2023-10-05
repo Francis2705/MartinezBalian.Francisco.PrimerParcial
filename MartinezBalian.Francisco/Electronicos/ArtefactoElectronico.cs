@@ -6,7 +6,7 @@ namespace Electronicos
     {
         //Atributos
         protected double precio;
-        protected double medida;
+        protected double medidaAlto;
         protected string nombre;
         protected string descripcion;
         protected ETipoOrigen tipoOrigen;
@@ -23,15 +23,15 @@ namespace Electronicos
                 this.precio = value;
             }
         }
-        protected double Medida
+        protected double MedidaAlto
         {
             get
             {
-                return this.medida;
+                return this.medidaAlto;
             }
             set
             {
-                this.medida = value;
+                this.medidaAlto = value;
             }
         }
         protected string Nombre
@@ -68,21 +68,15 @@ namespace Electronicos
             }
         }
 
-
-
-
-        //Constructor (faltarian 2?? preguntar)
-        public ArtefactoElectronico(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen)
+        //Constructor
+        public ArtefactoElectronico(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen)
         {
             this.precio = precio;
-            this.medida = medida;
+            this.medidaAlto = medidaAlto;
             this.nombre = nombre;
             this.descripcion = descripcion;
             this.tipoOrigen = tipoOrigen;
         }
-
-
-
 
         //Metodos con virtual y abstract
         public virtual string MostrarDatosGenerales()
@@ -90,7 +84,7 @@ namespace Electronicos
             StringBuilder sb = new StringBuilder();
 
             sb.AppendLine($"Precio: {this.precio}");
-            sb.AppendLine($"Medida: {this.medida}");
+            sb.AppendLine($"Medida: {this.medidaAlto}");
             sb.AppendLine($"Nombre: {this.nombre}");
             sb.AppendLine($"Descripcion: {this.descripcion}");
             sb.AppendLine($"Tipo: {this.tipoOrigen}");
@@ -102,28 +96,25 @@ namespace Electronicos
         //Sobrecarga del operador ==
         public static bool operator ==(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
-            return (art1.precio == art2.precio) && (art1.nombre == art2.nombre) && (art1.medida == art2.medida);
+            return (art1.precio == art2.precio) && (art1.nombre == art2.nombre) && (art1.medidaAlto == art2.medidaAlto);
         }
         public static bool operator !=(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
             return !(art1 == art2);
         }
 
-
-
-        //Sobrescritura del Equals() y del ToString() (necesario hacerlo aca?? preguntar)
-        /*public override bool Equals(object? obj)
+        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        public override bool Equals(object? obj)
         {
-            bool retorno = false;
-            if (obj is ArtefactoElectronico)
-            {
-                retorno = this == (ArtefactoElectronico)obj;
-            }
-            return retorno;
+            return this.GetType() == obj.GetType();
         }
         public override string ToString()
         {
             return this.MostrarDatosGenerales();
-        }*/
+        }
+        public override int GetHashCode()
+        {
+            return (int)this.precio;
+        }
     }
 }

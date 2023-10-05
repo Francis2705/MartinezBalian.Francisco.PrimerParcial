@@ -62,8 +62,8 @@ namespace Electronicos
         }
         
         //Constructores
-        public Celular(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria)
-            : base(precio, medida, nombre, descripcion, tipoOrigen)
+        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria)
+            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
         {
             this.bateria = bateria;
             this.asistenteVirtual = false;
@@ -71,15 +71,15 @@ namespace Electronicos
             this.cantidadContactos = 0;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Celular(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
-            int cantidadAplicaciones, int cantidadContactos) : this(precio, medida, nombre, descripcion, tipoOrigen, bateria)
+        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
+            int cantidadAplicaciones, int cantidadContactos) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, bateria)
         {
             this.cantidadAplicaciones = cantidadAplicaciones;
             this.cantidadContactos = cantidadContactos;
         }
         //Sobrecarga de uno menos ↑
-        public Celular(double precio, double medida, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
-            int cantidadAplicaciones, int cantidadContactos, bool asistenteVirtual):this(precio, medida, nombre, descripcion, 
+        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
+            int cantidadAplicaciones, int cantidadContactos, bool asistenteVirtual):this(precio, medidaAlto, nombre, descripcion, 
                 tipoOrigen, bateria, cantidadAplicaciones, cantidadContactos)
         {
             this.asistenteVirtual = asistenteVirtual;
@@ -89,8 +89,7 @@ namespace Electronicos
         //Sobrescritura de metodos virtual e implementacion del abstract
         public override string MostrarDatosGenerales()
         {
-            string cadena = "Esto es un celular\n";
-            return cadena + base.MostrarDatosGenerales();
+            return "Esto es un celular\n" + base.ToString();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -112,8 +111,69 @@ namespace Electronicos
             return sb.ToString();
         }
 
-        //Faltan: sobrecargar el == y el !=, hacer una sobrecarga implicita y otra explicita con el nombre, sobrescribir los metodos
-        //Equals() (usar el == sobrecargado) y ToString() (ver alguna relacion con el metodo de MostrarDatosGenerales())
-        //y hacer metodos normales y alguna sobrecarga (recargar bateria, aniadir memoria, etc) <- Ejemplos genericos, hacer especificos
+        //Sobrecarga implicita y explicita
+        public static implicit operator Celular(string nombreCelu) //De un string, creo un Celular 
+        {
+            return new Celular(10000, 15, nombreCelu, "Celular sin descripcion", ETipoOrigen.INTERNACIONAL, 50); //Celular celular1 = "Iphone";
+        }
+        public static explicit operator string(Celular nombreCelu) //De un Celular, creo un string 
+        {
+            return nombreCelu.nombre;
+            // Celular celular1 = new Celular("paso parametros");
+            // string nombre = (string)celular1;
+        }
+
+        //Sobrecarga del operador ==
+        public static bool operator ==(Celular celu1, Celular celu2)
+        {
+            return (((ArtefactoElectronico)celu1) == celu2) && celu1.cantidadContactos == celu2.cantidadContactos;
+        }
+        public static bool operator !=(Celular celu1, Celular celu2)
+        {
+            return !(celu1 == celu2);
+        }
+
+        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        public override bool Equals(object? obj)
+        {
+            bool retorno = false;
+            if (obj is Celular)
+            {
+                retorno = this == (Celular)obj;
+            }
+            return retorno;
+        }
+        public override string ToString()
+        {
+            return this.MostrarDatosGenerales();
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        //Metodos "normales" y sobrecarga
+        public int RecargarBateria() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Recarga rapida!)
+        {
+            int retorno = 0;
+            this.bateria += 10;
+            if (this.bateria > 100)
+            {
+                this.bateria = 100;
+                retorno = 1;
+            }
+            return retorno;
+        }
+        public int RecargarBateria(int porcentaje) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        {
+            int retorno = 0;
+            this.bateria += porcentaje;
+            if (this.bateria > 100)
+            {
+                this.bateria = 100;
+                retorno = 1;
+            }
+            return retorno;
+        }
     }
 }
