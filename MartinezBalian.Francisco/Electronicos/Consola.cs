@@ -86,7 +86,7 @@ namespace Electronicos
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        public override string MostrarDatosGenerales()
+        protected override string MostrarDatosGenerales()
         {
             return "Esto es una consola\n" + base.ToString();
         }
@@ -121,9 +121,10 @@ namespace Electronicos
         }
 
         //Sobrecarga del operador ==
-        public static bool operator ==(Consola con1, Consola con2)
+        public static bool operator ==(Consola con1, Consola con2) //Va al Equals() base
         {
-            return (((ArtefactoElectronico)con1) == con2) && con1.velocidadDescargaMB == con2.velocidadDescargaMB;
+            return ((ArtefactoElectronico)con1).Equals(con2) && con1.velocidadDescargaMB == con2.velocidadDescargaMB;
+            //return ((ArtefactoElectronico)con1) == con2 && con1.velocidadDescargaMB == con2.velocidadDescargaMB;
         }
         public static bool operator !=(Consola con1, Consola con2)
         {
@@ -136,7 +137,7 @@ namespace Electronicos
             bool retorno = false;
             if (obj is Consola)
             {
-                retorno = this == (Consola)obj;
+                retorno = true;
             }
             return retorno;
         }

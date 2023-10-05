@@ -106,7 +106,12 @@ namespace Electronicos
         //Sobrescritura del Equals(), ToString() y el GetHashCode()
         public override bool Equals(object? obj)
         {
-            return this == (ArtefactoElectronico)obj; //return this.GetType() == obj.GetType();
+            bool retorno = false;
+            if (obj is ArtefactoElectronico)
+            {
+                retorno = this == (ArtefactoElectronico)obj;
+            }
+            return retorno;
         }
         public override string ToString()
         {

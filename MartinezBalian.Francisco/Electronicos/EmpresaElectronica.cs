@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Electronicos
@@ -38,20 +39,80 @@ namespace Electronicos
             this.creador = creador;
         }
 
+        //Sobrecarga del operador ==
+        public static bool operator ==(EmpresaElectronica e, ArtefactoElectronico a)
+        {
+            foreach (ArtefactoElectronico artefacto in e.productosElectronicos)
+            {
+                if (a == artefacto)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        public static bool operator !=(EmpresaElectronica e, ArtefactoElectronico a)
+        {
+            return !(e == a);
+        }
 
-
-        /*Para ingresar objetos a dicha colección, solo se podrá hacer mediante la sobrecarga del operador de adición (+).*/
-
-
-        /*Para eliminar objetos de la colección, solo se podrá hacer mediante la sobrecarga del operador de sustracción (-).*/
-
-        /*Sobrecargar el operador de igualdad (==) para que permita indicar si un objeto de la jerarquía
-        de clases está incluido en la colección o no.*/
-
-        /*Tanto para agregar o eliminar objetos de la colección, se deberá verificar que el mismo esté, en
-        el caso de la eliminación, o no esté, para el caso de la adición. Comparando objetos, según el criterio elegido.*/
+        //Sobrecarga del operador + y -
+        public static EmpresaElectronica operator +(EmpresaElectronica e, ArtefactoElectronico a)
+        {
+            if (e != a)
+            {
+                e.productosElectronicos.Add(a);
+            }
+            return e;
+        }
+        public static EmpresaElectronica operator -(EmpresaElectronica e, ArtefactoElectronico a)
+        {
+            if (e == a)
+            {
+                e.productosElectronicos.Remove(a);
+            }
+            return e;
+        }
 
         /*Agregar la posibilidad de poder ordenar los objetos de la colección con, al menos, dos criterios
         distintos de ordenamiento. Cada criterio de ordenación deberá incluir el modo ascendente y descendente.*/
+
+        //aca no son necesarios los returns, porque ya esos valores los va a recibir el Sort, y se va a encargar de ordenar
+        //segun el retorno dado (en este caso no son necesarios porque se lo paso al sort, capaz q en otro caso si es necesario)
+
+        //lavadero.Vehiculos.Sort(LavaderoClase.OrdenarVehiculosPorPatente);
+        /*public static int OrdenarVehiculosPorPatente(Vehiculo v1, Vehiculo v2)
+        {
+            return String.Compare(v1.Patente, v2.Patente);
+            /*if (String.Compare(v1.Patente, v2.Patente) == 0)
+            {
+                return 0;
+            }
+            else if (String.Compare(v1.Patente, v2.Patente) == -1) //la primera es menor, la letra 'a' < 'b'
+            {
+                return -1;
+            }
+            else //la segunda es mayor
+            {
+                return 1;
+            }*/
+        //}
+        /*public int OrdenarVehiculosPorMarca(Vehiculo v1, Vehiculo v2)
+        {
+            return String.Compare(v1.Marca.ToString(), v2.Marca.ToString());
+
+            /*if (String.Compare(v1.Marca.ToString(), v2.Marca.ToString()) == 0)
+            {
+                return 0;
+            }
+            else if (String.Compare(v1.Marca.ToString(), v2.Marca.ToString()) == -1)
+            {
+                return -1;
+            }
+            else
+            {
+                return 1;
+            }*/
+        //}
     }
 }

@@ -121,9 +121,10 @@ namespace Electronicos
         }
 
         //Sobrecarga del operador ==
-        public static bool operator ==(Computadora compu1, Computadora compu2)
+        public static bool operator ==(Computadora compu1, Computadora compu2) //Va al Equals() base
         {
-            return (((ArtefactoElectronico)compu1) == compu2) && compu1.cantidadNucleos == compu2.cantidadNucleos;
+            return ((ArtefactoElectronico)compu1).Equals(compu2) && compu1.cantidadNucleos == compu2.cantidadNucleos;
+            //return (((ArtefactoElectronico)compu1) == compu2) && compu1.cantidadNucleos == compu2.cantidadNucleos;
         }
         public static bool operator !=(Computadora compu1, Computadora compu2)
         {
@@ -136,7 +137,7 @@ namespace Electronicos
             bool retorno = false;
             if (obj is Computadora)
             {
-                retorno = this == (Computadora)obj;
+                retorno = true;
             }
             return retorno;
         }
