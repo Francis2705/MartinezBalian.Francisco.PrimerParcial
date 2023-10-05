@@ -1,0 +1,14 @@
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\bin\Debug\net6.0\ejercicio_i_01.exe
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\bin\Debug\net6.0\ejercicio_i_01.deps.json
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\bin\Debug\net6.0\ejercicio_i_01.runtimeconfig.json
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\bin\Debug\net6.0\ejercicio_i_01.dll
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\bin\Debug\net6.0\ejercicio_i_01.pdb
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.AssemblyInfoInputs.cache
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.AssemblyInfo.cs
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.csproj.CoreCompileInputs.cache
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.dll
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\refint\ejercicio_i_01.dll
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.pdb
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ejercicio_i_01.genruntimeconfig.cache
+C:\Users\franc\source\repos\Clase_03\ejercicio_i_01\obj\Debug\net6.0\ref\ejercicio_i_01.dll
