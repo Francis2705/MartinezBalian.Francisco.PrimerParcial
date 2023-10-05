@@ -7,7 +7,7 @@ namespace anotaciones
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello, Juampi");
             ClasePrueba variablePrueba = new ClasePrueba(); //asi creo un objeto
             //ClasePrueba() -> hace referencia al constructor de esa clase
         }

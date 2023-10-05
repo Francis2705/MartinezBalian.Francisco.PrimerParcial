@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\franc\\source\\repos\\Clase_03\\ejercicio_clase\\ejercicio_clase.csproj",
+      "projectUniqueName": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\POO\\ejercicio_clase\\ejercicio_clase.csproj",
       "projectName": "ejercicio_clase",
-      "projectPath": "C:\\Users\\franc\\source\\repos\\Clase_03\\ejercicio_clase\\ejercicio_clase.csproj",
+      "projectPath": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\POO\\ejercicio_clase\\ejercicio_clase.csproj",
       "packagesPath": "C:\\Users\\franc\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\franc\\source\\repos\\Clase_03\\ejercicio_clase\\obj\\",
+      "outputPath": "C:\\Users\\franc\\Desktop\\carpetas_de_github\\MartinezBalian.Francisco.PrimerParcial\\POO\\ejercicio_clase\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
