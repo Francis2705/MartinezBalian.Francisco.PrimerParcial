@@ -87,7 +87,7 @@ namespace Electronicos
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        public override string MostrarDatosGenerales()
+        protected override string MostrarDatosGenerales()
         {
             return "Esto es un celular\n" + base.ToString();
         }

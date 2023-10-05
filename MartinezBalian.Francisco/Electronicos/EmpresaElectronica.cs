@@ -14,7 +14,6 @@ namespace Electronicos
         private List<ArtefactoElectronico> productosElectronicos;
 
         //Propiedades e indexador
-        /*Hacer indexador de string, que se ingrese un nombre y que devuelva ese producto, sino, devuelve un string vacio o null (chequear)*/
         public string Nombre
         {
             get { return nombre; }
@@ -22,6 +21,13 @@ namespace Electronicos
         public string Creador
         {
             get { return creador; }
+        }
+        public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera
+        {
+            get
+            {
+                return this.productosElectronicos[i];
+            }
         }
 
         //Constructor
@@ -33,7 +39,9 @@ namespace Electronicos
         }
 
 
+
         /*Para ingresar objetos a dicha colección, solo se podrá hacer mediante la sobrecarga del operador de adición (+).*/
+
 
         /*Para eliminar objetos de la colección, solo se podrá hacer mediante la sobrecarga del operador de sustracción (-).*/
 

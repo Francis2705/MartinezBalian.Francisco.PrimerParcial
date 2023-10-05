@@ -79,7 +79,7 @@ namespace Electronicos
         }
 
         //Metodos con virtual y abstract
-        public virtual string MostrarDatosGenerales()
+        protected virtual string MostrarDatosGenerales()
         {
             StringBuilder sb = new StringBuilder();
 
@@ -106,7 +106,7 @@ namespace Electronicos
         //Sobrescritura del Equals(), ToString() y el GetHashCode()
         public override bool Equals(object? obj)
         {
-            return this.GetType() == obj.GetType();
+            return this == (ArtefactoElectronico)obj; //return this.GetType() == obj.GetType();
         }
         public override string ToString()
         {

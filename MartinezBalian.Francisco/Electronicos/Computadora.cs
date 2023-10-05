@@ -67,7 +67,7 @@ namespace Electronicos
             this.esTactil = esTactil;
             this.cantidadNucleos = 2;
             this.espacioDiscoSSD = 100;
-            this.espacioDiscoHDD = 200;
+            this.espacioDiscoHDD = 500;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
         public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
@@ -86,10 +86,9 @@ namespace Electronicos
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        public override string MostrarDatosGenerales()
+        protected override string MostrarDatosGenerales()
         {
-            string cadena = "Esto es una computadora\n";
-            return cadena + base.MostrarDatosGenerales();
+            return "Esto es una computadora\n" + base.ToString();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -111,8 +110,67 @@ namespace Electronicos
             return sb.ToString();
         }
 
-        //Faltan: sobrecargar el == y el !=, hacer una sobrecarga implicita y otra explicita con el nombre, sobrescribir los metodos
-        //Equals() (usar el == sobrecargado) y ToString() (ver alguna relacion con el metodo de MostrarDatosGenerales())
-        //y hacer metodos normales y alguna sobrecarga (recargar bateria, aniadir memoria, etc) <- Ejemplos genericos, hacer especificos
+        //Sobrecarga implicita y explicita
+        public static implicit operator Computadora(string nombreCompu)
+        {
+            return new Computadora(10000, 15, nombreCompu, "Computadora sin descripcion", ETipoOrigen.INTERNACIONAL, false);
+        }
+        public static explicit operator string(Computadora nombreCompu)
+        {
+            return nombreCompu.nombre;
+        }
+
+        //Sobrecarga del operador ==
+        public static bool operator ==(Computadora compu1, Computadora compu2)
+        {
+            return (((ArtefactoElectronico)compu1) == compu2) && compu1.cantidadNucleos == compu2.cantidadNucleos;
+        }
+        public static bool operator !=(Computadora compu1, Computadora compu2)
+        {
+            return !(compu1 == compu2);
+        }
+
+        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        public override bool Equals(object? obj)
+        {
+            bool retorno = false;
+            if (obj is Computadora)
+            {
+                retorno = this == (Computadora)obj;
+            }
+            return retorno;
+        }
+        public override string ToString()
+        {
+            return this.MostrarDatosGenerales();
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        //Metodos "normales" y sobrecarga
+        public int AgregarEspacioSSD() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Agregado rapido!)
+        {
+            int retorno = 0;
+            this.espacioDiscoSSD += 50;
+            if (this.espacioDiscoSSD > 256)
+            {
+                this.espacioDiscoSSD = 256;
+                retorno = 1;
+            }
+            return retorno;
+        }
+        public int AgregarEspacioSSD(int num) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        {
+            int retorno = 0;
+            this.espacioDiscoSSD += num;
+            if (this.espacioDiscoSSD > 256)
+            {
+                this.espacioDiscoSSD = 256;
+                retorno = 1;
+            }
+            return retorno;
+        }
     }
 }

@@ -88,8 +88,7 @@ namespace Electronicos
         //Sobrescritura de metodos virtual e implementacion del abstract
         public override string MostrarDatosGenerales()
         {
-            string cadena = "Esto es una consola\n";
-            return cadena + base.MostrarDatosGenerales();
+            return "Esto es una consola\n" + base.ToString();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -111,8 +110,67 @@ namespace Electronicos
             return sb.ToString();
         }
 
-        //Faltan: sobrecargar el == y el !=, hacer una sobrecarga implicita y otra explicita con el nombre, sobrescribir los metodos
-        //Equals() (usar el == sobrecargado) y ToString() (ver alguna relacion con el metodo de MostrarDatosGenerales())
-        //y hacer metodos normales y alguna sobrecarga (recargar bateria, aniadir memoria, etc) <- Ejemplos genericos, hacer especificos
+        //Sobrecarga implicita y explicita
+        public static implicit operator Consola(string nombreConsola)
+        {
+            return new Consola(10000, 15, nombreConsola, "Consola sin descripcion", ETipoOrigen.INTERNACIONAL, false);
+        }
+        public static explicit operator string(Consola nombreConsola) 
+        {
+            return nombreConsola.nombre;
+        }
+
+        //Sobrecarga del operador ==
+        public static bool operator ==(Consola con1, Consola con2)
+        {
+            return (((ArtefactoElectronico)con1) == con2) && con1.velocidadDescargaMB == con2.velocidadDescargaMB;
+        }
+        public static bool operator !=(Consola con1, Consola con2)
+        {
+            return !(con1 == con2);
+        }
+
+        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        public override bool Equals(object? obj)
+        {
+            bool retorno = false;
+            if (obj is Consola)
+            {
+                retorno = this == (Consola)obj;
+            }
+            return retorno;
+        }
+        public override string ToString()
+        {
+            return this.MostrarDatosGenerales();
+        }
+        public override int GetHashCode()
+        {
+            return base.GetHashCode();
+        }
+
+        //Metodos "normales" y sobrecarga
+        public int AgregarMemoria() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Agregado rapido!)
+        {
+            int retorno = 0;
+            this.memoriaTotal += 50;
+            if (this.memoriaTotal > 500)
+            {
+                this.memoriaTotal = 500;
+                retorno = 1;
+            }
+            return retorno;
+        }
+        public int AgregarMemoria(int num) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        {
+            int retorno = 0;
+            this.memoriaTotal += num;
+            if (this.memoriaTotal > 100)
+            {
+                this.memoriaTotal = 100;
+                retorno = 1;
+            }
+            return retorno;
+        }
     }
 }
