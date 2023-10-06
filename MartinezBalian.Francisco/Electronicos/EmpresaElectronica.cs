@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Electronicos
 {
-    public class EmpresaElectronica
+    public sealed class EmpresaElectronica
     {
         //Atributos
         private string nombre;
@@ -23,7 +23,7 @@ namespace Electronicos
         {
             get { return creador; }
         }
-        public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera
+        public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera 
         {
             get
             {
@@ -56,6 +56,20 @@ namespace Electronicos
             return !(e == a);
         }
 
+        //Equals, GetHashCode y ToString
+        public override bool Equals(object? obj)
+        {
+            return this == (ArtefactoElectronico)obj;
+        }
+        public override int GetHashCode()
+        {
+            return productosElectronicos.Count;
+        }
+        public override string ToString()
+        {
+            return $"Nombre: {nombre} - Creador: {creador}";
+        }
+
         //Sobrecarga del operador + y -
         public static EmpresaElectronica operator +(EmpresaElectronica e, ArtefactoElectronico a)
         {
@@ -74,21 +88,22 @@ namespace Electronicos
             return e;
         }
 
-        /*Agregar la posibilidad de poder ordenar los objetos de la colección con, al menos, dos criterios
-        distintos de ordenamiento. Cada criterio de ordenación deberá incluir el modo ascendente y descendente.*/
-
-        //aca no son necesarios los returns, porque ya esos valores los va a recibir el Sort, y se va a encargar de ordenar
-        //segun el retorno dado (en este caso no son necesarios porque se lo paso al sort, capaz q en otro caso si es necesario)
-
-        //lavadero.Vehiculos.Sort(LavaderoClase.OrdenarVehiculosPorPatente);
-        /*public static int OrdenarVehiculosPorPatente(Vehiculo v1, Vehiculo v2)
+        //Metodos ordenamientos
+        public static int OrdenarArtefactosPorNombre(ArtefactoElectronico art1, ArtefactoElectronico art2, bool ascendente)
         {
-            return String.Compare(v1.Patente, v2.Patente);
-            /*if (String.Compare(v1.Patente, v2.Patente) == 0)
+            if (ascendente)
+            {
+                return String.Compare(art1.Nombre, art2.Nombre);
+            }
+            else
+            {
+                return String.Compare(art2.Nombre, art1.Nombre);
+            }
+            /*if (String.Compare(art1.Nombre, art2.Nombre) == 0)
             {
                 return 0;
             }
-            else if (String.Compare(v1.Patente, v2.Patente) == -1) //la primera es menor, la letra 'a' < 'b'
+            else if (String.Compare(art1.Nombre, art2.Nombre) == -1) //el primero es menor, la letra 'a' < 'b'
             {
                 return -1;
             }
@@ -96,23 +111,29 @@ namespace Electronicos
             {
                 return 1;
             }*/
-        //}
-        /*public int OrdenarVehiculosPorMarca(Vehiculo v1, Vehiculo v2)
+        }
+        public static int OrdenarArtefactosPorPrecio(ArtefactoElectronico art1, ArtefactoElectronico art2, bool ascendente)
         {
-            return String.Compare(v1.Marca.ToString(), v2.Marca.ToString());
-
-            /*if (String.Compare(v1.Marca.ToString(), v2.Marca.ToString()) == 0)
+            if (ascendente)
             {
-                return 0;
-            }
-            else if (String.Compare(v1.Marca.ToString(), v2.Marca.ToString()) == -1)
-            {
-                return -1;
+                return art1.Precio.CompareTo(art2.Precio);
             }
             else
             {
-                return 1;
+                return art2.Precio.CompareTo(art1.Precio);
+            }
+            /*if (art1.Precio.CompareTo(art2.Precio) < 0)
+            {
+                Console.WriteLine("el valor de art1.Precio es menor al de art2.Precio");
+            }
+            else if (art1.Precio.CompareTo(art2.Precio) == 0)
+            {
+                Console.WriteLine("son iguales");
+            }
+            else
+            {
+                Console.WriteLine("el valor de art1.Precio es mayor al de art2.Precio");
             }*/
-        //}
+        }
     }
 }

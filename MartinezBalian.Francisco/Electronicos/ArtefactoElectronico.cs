@@ -6,13 +6,13 @@ namespace Electronicos
     {
         //Atributos
         protected double precio;
-        protected double medidaAlto;
         protected string nombre;
+        protected double medidaAlto;
         protected string descripcion;
         protected ETipoOrigen tipoOrigen;
 
         //Propiedades
-        protected double Precio
+        internal double Precio //Internal porque la uso para ordenar (EmpresaElectronica) 
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Electronicos
                 this.medidaAlto = value;
             }
         }
-        protected string Nombre
+        internal string Nombre //Internal porque la uso para ordenar (EmpresaElectronica) 
         {
             get
             {
