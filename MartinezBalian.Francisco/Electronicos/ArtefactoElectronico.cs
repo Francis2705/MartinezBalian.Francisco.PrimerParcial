@@ -11,8 +11,8 @@ namespace Electronicos
         protected string descripcion;
         protected ETipoOrigen tipoOrigen;
 
-        //Propiedades
-        internal double Precio //Internal porque la uso para ordenar (EmpresaElectronica) 
+        //Propiedades (publicas para la serializacion)
+        public double Precio 
         {
             get
             {
@@ -23,7 +23,7 @@ namespace Electronicos
                 this.precio = value;
             }
         }
-        protected double MedidaAlto
+        public double MedidaAlto
         {
             get
             {
@@ -34,7 +34,7 @@ namespace Electronicos
                 this.medidaAlto = value;
             }
         }
-        internal string Nombre //Internal porque la uso para ordenar (EmpresaElectronica) 
+        public string Nombre 
         {
             get
             {
@@ -45,7 +45,7 @@ namespace Electronicos
                 this.nombre = value;
             }
         }
-        protected string Descripcion
+        public string Descripcion
         {
             get
             {
@@ -56,7 +56,7 @@ namespace Electronicos
                 this.descripcion = value;
             }
         }
-        protected ETipoOrigen TipoOrigen
+        public ETipoOrigen TipoOrigen
         {
             get
             {
