@@ -29,11 +29,12 @@
         private void InitializeComponent()
         {
             btnVisualizadorUsuariosLogueo = new Button();
+            lblUsuarioInfo = new Label();
             SuspendLayout();
             // 
             // btnVisualizadorUsuariosLogueo
             // 
-            btnVisualizadorUsuariosLogueo.Location = new Point(371, 248);
+            btnVisualizadorUsuariosLogueo.Location = new Point(43, 313);
             btnVisualizadorUsuariosLogueo.Name = "btnVisualizadorUsuariosLogueo";
             btnVisualizadorUsuariosLogueo.Size = new Size(189, 87);
             btnVisualizadorUsuariosLogueo.TabIndex = 0;
@@ -41,20 +42,35 @@
             btnVisualizadorUsuariosLogueo.UseVisualStyleBackColor = true;
             btnVisualizadorUsuariosLogueo.Click += btnVisualizadorUsuariosLogueo_Click;
             // 
+            // lblUsuarioInfo
+            // 
+            lblUsuarioInfo.AutoSize = true;
+            lblUsuarioInfo.Location = new Point(651, 9);
+            lblUsuarioInfo.Name = "lblUsuarioInfo";
+            lblUsuarioInfo.Size = new Size(85, 20);
+            lblUsuarioInfo.TabIndex = 1;
+            lblUsuarioInfo.Text = "InfoUsuario";
+            lblUsuarioInfo.TextAlign = ContentAlignment.TopRight;
+            // 
             // FrmPrincipalEmpresa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(lblUsuarioInfo);
             Controls.Add(btnVisualizadorUsuariosLogueo);
             Name = "FrmPrincipalEmpresa";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmPrincipalEmpresa";
             FormClosing += FrmPrincipalEmpresa_FormClosing;
+            Load += FrmPrincipalEmpresa_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private Button btnVisualizadorUsuariosLogueo;
+        private Label lblUsuarioInfo;
     }
 }

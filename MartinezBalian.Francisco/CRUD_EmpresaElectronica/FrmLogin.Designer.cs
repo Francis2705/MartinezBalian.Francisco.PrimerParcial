@@ -33,13 +33,14 @@ namespace CRUD_EmpresaElectronica
             txtBoxCorreo = new TextBox();
             txtBoxClave = new TextBox();
             btnIngresar = new Button();
-            button1 = new Button();
+            btnRellenar = new Button();
             SuspendLayout();
             // 
             // txtBoxCorreo
             // 
             txtBoxCorreo.Location = new Point(228, 96);
             txtBoxCorreo.Name = "txtBoxCorreo";
+            txtBoxCorreo.PlaceholderText = "Ingrese su usuario";
             txtBoxCorreo.Size = new Size(300, 27);
             txtBoxCorreo.TabIndex = 0;
             // 
@@ -47,6 +48,8 @@ namespace CRUD_EmpresaElectronica
             // 
             txtBoxClave.Location = new Point(228, 167);
             txtBoxClave.Name = "txtBoxClave";
+            txtBoxClave.PasswordChar = '*';
+            txtBoxClave.PlaceholderText = "Ingrese su clave";
             txtBoxClave.Size = new Size(258, 27);
             txtBoxClave.TabIndex = 1;
             // 
@@ -60,22 +63,22 @@ namespace CRUD_EmpresaElectronica
             btnIngresar.UseVisualStyleBackColor = true;
             btnIngresar.Click += btnIngresar_Click;
             // 
-            // button1
+            // btnRellenar
             // 
-            button1.Location = new Point(56, 319);
-            button1.Name = "button1";
-            button1.Size = new Size(148, 137);
-            button1.TabIndex = 3;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
+            btnRellenar.Location = new Point(56, 319);
+            btnRellenar.Name = "btnRellenar";
+            btnRellenar.Size = new Size(148, 137);
+            btnRellenar.TabIndex = 3;
+            btnRellenar.Text = "Relleno automatico";
+            btnRellenar.UseVisualStyleBackColor = true;
+            btnRellenar.Click += btnRellenar_Click;
             // 
             // FrmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(605, 693);
-            Controls.Add(button1);
+            Controls.Add(btnRellenar);
             Controls.Add(btnIngresar);
             Controls.Add(txtBoxClave);
             Controls.Add(txtBoxCorreo);
@@ -93,6 +96,6 @@ namespace CRUD_EmpresaElectronica
         private TextBox txtBoxCorreo;
         private TextBox txtBoxClave;
         private Button btnIngresar;
-        private Button button1;
+        private Button btnRellenar;
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Electronicos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -19,14 +20,31 @@ namespace CRUD_EmpresaElectronica
 
         private void FrmPrincipalEmpresa_FormClosing(object sender, FormClosingEventArgs e)
         {
-            FrmLogin frmLogin = new FrmLogin();
-            frmLogin.Show();
+            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar la sesion?", 
+                "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+            if (resultado == DialogResult.No)
+            {
+                e.Cancel = true;
+            }
+            else
+            {
+                FrmLogin frmLogin = new FrmLogin();
+                frmLogin.Show();
+            }
         }
 
         private void btnVisualizadorUsuariosLogueo_Click(object sender, EventArgs e)
         {
             FrmVisualizadorUsuarios frmVisualizadorUsuarios = new FrmVisualizadorUsuarios();
             frmVisualizadorUsuarios.ShowDialog();
+        }
+
+        private void FrmPrincipalEmpresa_Load(object sender, EventArgs e)
+        {
+            UsuarioElectronico usuarioElectronico = FrmLogin.GetUsuarioElectronico();
+
+            lblUsuarioInfo.Text = $"Nombre: {usuarioElectronico.Nombre}\nFecha: {DateTime.Now.ToString("yyyy-MM-dd")}";
         }
     }
 }

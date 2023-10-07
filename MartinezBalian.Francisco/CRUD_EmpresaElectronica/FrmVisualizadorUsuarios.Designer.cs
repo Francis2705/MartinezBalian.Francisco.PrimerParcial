@@ -28,24 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            richTextBox1 = new RichTextBox();
+            richTxtBoxInfoLogueos = new RichTextBox();
             SuspendLayout();
             // 
-            // richTextBox1
+            // richTxtBoxInfoLogueos
             // 
-            richTextBox1.Location = new Point(101, 73);
-            richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(616, 438);
-            richTextBox1.TabIndex = 0;
-            richTextBox1.Text = "";
+            richTxtBoxInfoLogueos.Location = new Point(101, 73);
+            richTxtBoxInfoLogueos.Name = "richTxtBoxInfoLogueos";
+            richTxtBoxInfoLogueos.Size = new Size(616, 438);
+            richTxtBoxInfoLogueos.TabIndex = 0;
+            richTxtBoxInfoLogueos.Text = "";
             // 
             // FrmVisualizadorUsuarios
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(961, 584);
-            Controls.Add(richTextBox1);
+            Controls.Add(richTxtBoxInfoLogueos);
             Name = "FrmVisualizadorUsuarios";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmVisualizadorUsuarios";
             Load += FrmVisualizadorUsuarios_Load;
             ResumeLayout(false);
@@ -53,6 +54,6 @@
 
         #endregion
 
-        private RichTextBox richTextBox1;
+        private RichTextBox richTxtBoxInfoLogueos;
     }
 }

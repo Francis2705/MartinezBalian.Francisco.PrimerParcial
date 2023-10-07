@@ -7,6 +7,7 @@ namespace CRUD_EmpresaElectronica
     public partial class FrmLogin : Form
     {
         List<UsuarioElectronico> listaUsuarios = new List<UsuarioElectronico>();
+        static UsuarioElectronico usuarioLogueado = null;
 
         public FrmLogin()
         {
@@ -36,7 +37,6 @@ namespace CRUD_EmpresaElectronica
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             bool usuarioValido = false;
-            UsuarioElectronico usuarioLogueado = null;
 
             foreach (UsuarioElectronico usuario in listaUsuarios)
             {
@@ -60,7 +60,7 @@ namespace CRUD_EmpresaElectronica
                 sb.AppendLine($"Perfil: {usuarioLogueado.Perfil}");
                 sb.AppendLine($"Fecha de logueo: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
                 sb.ToString();
-                
+
                 using (StreamWriter sw = new StreamWriter(@"../../../../usuarios.log", true, miCodificacion))
                 {
                     sw.WriteLine(sb);
@@ -76,7 +76,7 @@ namespace CRUD_EmpresaElectronica
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnRellenar_Click(object sender, EventArgs e)
         {
             Random random = new Random();
             int i = random.Next(0, listaUsuarios.Count);
@@ -87,6 +87,11 @@ namespace CRUD_EmpresaElectronica
         private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
+        }
+
+        public static UsuarioElectronico GetUsuarioElectronico()
+        {
+            return usuarioLogueado;
         }
     }
 }
