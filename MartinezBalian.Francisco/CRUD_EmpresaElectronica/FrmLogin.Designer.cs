@@ -30,6 +30,7 @@ namespace CRUD_EmpresaElectronica
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             txtBoxCorreo = new TextBox();
             txtBoxClave = new TextBox();
             btnIngresar = new Button();
@@ -77,7 +78,9 @@ namespace CRUD_EmpresaElectronica
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(605, 693);
+            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(605, 499);
             Controls.Add(btnRellenar);
             Controls.Add(btnIngresar);
             Controls.Add(txtBoxClave);

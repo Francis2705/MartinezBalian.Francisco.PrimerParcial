@@ -20,3 +20,6 @@ C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial
 C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.csproj.CopyComplete
 C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.FrmPrincipalEmpresa.resources
 C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.FrmVisualizadorUsuarios.resources
+C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.Properties.Resources.resources
+C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.FrmAgregar.resources
+C:\Users\franc\Desktop\carpetas_de_github\MartinezBalian.Francisco.PrimerParcial\MartinezBalian.Francisco\CRUD_EmpresaElectronica\obj\Debug\net6.0-windows\CRUD_EmpresaElectronica.FrmAgregarCelular.resources

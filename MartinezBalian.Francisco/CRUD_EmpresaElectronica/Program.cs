@@ -1,3 +1,5 @@
+using System.Security.Cryptography;
+
 namespace CRUD_EmpresaElectronica
 {
     internal static class Program

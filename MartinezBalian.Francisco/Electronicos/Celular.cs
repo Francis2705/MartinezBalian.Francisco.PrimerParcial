@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Electronicos
@@ -12,7 +13,6 @@ namespace Electronicos
         //Atributos
         private bool asistenteVirtual;
         private int bateria;
-        private int cantidadAplicaciones;
         private int cantidadContactos;
 
         //Propiedades
@@ -38,17 +38,6 @@ namespace Electronicos
                 this.bateria = value;
             }
         }
-        public int CantidadAplicaciones
-        {
-            get
-            {
-                return this.cantidadAplicaciones;
-            }
-            set
-            {
-                this.cantidadAplicaciones = value;
-            }
-        }
         public int CantidadContactos
         {
             get
@@ -62,34 +51,31 @@ namespace Electronicos
         }
         
         //Constructores
-        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria)
-            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
+        public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria)
+            : base(precio, nombre, marca, tipoOrigen)
         {
             this.bateria = bateria;
             this.asistenteVirtual = false;
-            this.cantidadAplicaciones = 0;
             this.cantidadContactos = 0;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
-            int cantidadAplicaciones, int cantidadContactos) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, bateria)
+        public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
+            int cantidadContactos) : this(precio, nombre, marca, tipoOrigen, bateria)
         {
-            this.cantidadAplicaciones = cantidadAplicaciones;
             this.cantidadContactos = cantidadContactos;
         }
         //Sobrecarga de uno menos ↑
-        public Celular(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, int bateria,
-            int cantidadAplicaciones, int cantidadContactos, bool asistenteVirtual):this(precio, medidaAlto, nombre, descripcion, 
-                tipoOrigen, bateria, cantidadAplicaciones, cantidadContactos)
+        public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
+            int cantidadContactos, bool asistenteVirtual):this(precio, nombre, marca, tipoOrigen, bateria, cantidadContactos)
         {
             this.asistenteVirtual = asistenteVirtual;
         }
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        protected override string MostrarDatosGenerales()
+        public override string MostrarDatosGenerales()
         {
-            return "Esto es un celular\n" + base.ToString();
+            return "Celular -> " + base.MostrarDatosGenerales();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -105,7 +91,6 @@ namespace Electronicos
             }
 
             sb.AppendLine($"Bateria: {this.bateria}");
-            sb.AppendLine($"Cantidad de aplicaciones: {this.cantidadAplicaciones}");
             sb.AppendLine($"Cantidad de contactos: {this.cantidadContactos}");
 
             return sb.ToString();
@@ -114,7 +99,7 @@ namespace Electronicos
         //Sobrecarga implicita y explicita
         public static implicit operator Celular(string nombreCelu) //De un string, creo un Celular 
         {
-            return new Celular(10000, 15, nombreCelu, "Celular sin descripcion", ETipoOrigen.INTERNACIONAL, 50); //Celular celular1 = "Iphone";
+            return new Celular(10000, nombreCelu, "Celular sin marca", ETipoOrigen.INTERNACIONAL, 50); //Celular celular1 = "Moto";
         }
         public static explicit operator string(Celular nombreCelu) //De un Celular, creo un string 
         {

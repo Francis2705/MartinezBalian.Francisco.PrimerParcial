@@ -14,7 +14,7 @@ namespace Electronicos
         private string creador;
         private List<ArtefactoElectronico> productosElectronicos;
 
-        //Propiedades e indexador
+        //Propiedades
         public string Nombre
         {
             get { return nombre; }
@@ -23,13 +23,19 @@ namespace Electronicos
         {
             get { return creador; }
         }
-        public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera 
+        public List<ArtefactoElectronico> ProductosElectronicos
+        {
+            get { return productosElectronicos; }
+            set { productosElectronicos = value;}
+        }
+        /*public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera 
         {
             get
             {
                 return this.productosElectronicos[i];
             }
-        }
+        }*/
+
 
         //Constructor
         public EmpresaElectronica(string nombre, string creador)

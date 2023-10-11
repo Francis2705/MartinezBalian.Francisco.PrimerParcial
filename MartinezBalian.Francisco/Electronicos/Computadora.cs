@@ -12,7 +12,6 @@ namespace Electronicos
         private bool esTactil;
         private int cantidadNucleos;
         private double espacioDiscoSSD;
-        private double espacioDiscoHDD;
 
         //Propiedades
         public bool EsTactil
@@ -48,47 +47,34 @@ namespace Electronicos
                 this.espacioDiscoSSD = value;
             }
         }
-        public double EspacioDiscoHDD
-        {
-            get
-            {
-                return this.espacioDiscoHDD;
-            }
-            set
-            {
-                this.espacioDiscoHDD = value;
-            }
-        }
 
         //Constructores
-        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil)
-            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
+        public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil)
+            : base(precio, nombre, marca, tipoOrigen)
         {
             this.esTactil = esTactil;
             this.cantidadNucleos = 2;
             this.espacioDiscoSSD = 100;
-            this.espacioDiscoHDD = 500;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
-            double espacioDiscoSSD, double espacioDiscoHDD) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, esTactil)
+        public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
+            double espacioDiscoSSD) : this(precio, nombre, marca, tipoOrigen, esTactil)
         {
             this.espacioDiscoSSD = espacioDiscoSSD;
-            this.espacioDiscoHDD = espacioDiscoHDD;
         }
         //Sobrecarga de uno menos ↑
-        public Computadora(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool esTactil,
-            double espacioDiscoSSD, double espacioDiscoHDD, int cantidadNucleos) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen,
-                esTactil, espacioDiscoSSD, espacioDiscoHDD)
+        public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
+            double espacioDiscoSSD, int cantidadNucleos) : this(precio, nombre, marca, tipoOrigen,
+                esTactil, espacioDiscoSSD)
         {
             this.cantidadNucleos = cantidadNucleos;
         }
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        protected override string MostrarDatosGenerales()
+        public override string MostrarDatosGenerales()
         {
-            return "Esto es una computadora\n" + base.ToString();
+            return "Esto es una computadora\n" + base.MostrarDatosGenerales();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -105,7 +91,6 @@ namespace Electronicos
 
             sb.AppendLine($"Cantidad de nucleos: {this.cantidadNucleos}");
             sb.AppendLine($"Espacio del disco SSD: {this.espacioDiscoSSD}");
-            sb.AppendLine($"Espacio del disco HDD: {this.espacioDiscoHDD}");
 
             return sb.ToString();
         }
@@ -113,7 +98,7 @@ namespace Electronicos
         //Sobrecarga implicita y explicita
         public static implicit operator Computadora(string nombreCompu)
         {
-            return new Computadora(10000, 15, nombreCompu, "Computadora sin descripcion", ETipoOrigen.INTERNACIONAL, false);
+            return new Computadora(10000, nombreCompu, "Computadora sin marca", ETipoOrigen.INTERNACIONAL, false);
         }
         public static explicit operator string(Computadora nombreCompu)
         {

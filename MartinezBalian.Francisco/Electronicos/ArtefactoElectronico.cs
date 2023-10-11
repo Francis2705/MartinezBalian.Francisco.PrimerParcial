@@ -1,4 +1,5 @@
 ﻿using System.Text;
+using System.Text.Json.Serialization;
 
 namespace Electronicos
 {
@@ -7,8 +8,7 @@ namespace Electronicos
         //Atributos
         protected double precio;
         protected string nombre;
-        protected double medidaAlto;
-        protected string descripcion;
+        protected string marca;
         protected ETipoOrigen tipoOrigen;
 
         //Propiedades (publicas para la serializacion)
@@ -23,17 +23,6 @@ namespace Electronicos
                 this.precio = value;
             }
         }
-        public double MedidaAlto
-        {
-            get
-            {
-                return this.medidaAlto;
-            }
-            set
-            {
-                this.medidaAlto = value;
-            }
-        }
         public string Nombre 
         {
             get
@@ -45,15 +34,15 @@ namespace Electronicos
                 this.nombre = value;
             }
         }
-        public string Descripcion
+        public string Marca
         {
             get
             {
-                return this.descripcion;
+                return this.marca;
             }
             set
             {
-                this.descripcion = value;
+                this.marca = value;
             }
         }
         public ETipoOrigen TipoOrigen
@@ -69,24 +58,22 @@ namespace Electronicos
         }
 
         //Constructor
-        public ArtefactoElectronico(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen)
+        public ArtefactoElectronico(double precio, string nombre, string marca, ETipoOrigen tipoOrigen)
         {
             this.precio = precio;
-            this.medidaAlto = medidaAlto;
             this.nombre = nombre;
-            this.descripcion = descripcion;
+            this.marca = marca;
             this.tipoOrigen = tipoOrigen;
         }
 
         //Metodos con virtual y abstract
-        protected virtual string MostrarDatosGenerales()
+        public virtual string MostrarDatosGenerales()
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Precio: {this.precio}");
-            sb.AppendLine($"Medida: {this.medidaAlto}");
-            sb.AppendLine($"Nombre: {this.nombre}");
-            sb.AppendLine($"Descripcion: {this.descripcion}");
+            sb.AppendLine($"Precio: {this.precio} - ");
+            sb.AppendLine($"Nombre: {this.nombre} - ");
+            sb.AppendLine($"Marca: {this.marca} - ");
             sb.AppendLine($"Tipo: {this.tipoOrigen}");
             
             return sb.ToString();
@@ -96,14 +83,14 @@ namespace Electronicos
         //Sobrecarga del operador ==
         public static bool operator ==(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
-            return (art1.precio == art2.precio) && (art1.nombre == art2.nombre) && (art1.medidaAlto == art2.medidaAlto);
+            return (art1.precio == art2.precio) && (art1.nombre == art2.nombre);
         }
         public static bool operator !=(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
             return !(art1 == art2);
         }
 
-        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        //Sobrescritura del Equals() y el GetHashCode() (chequear estas dos sobreescrituras)
         public override bool Equals(object? obj)
         {
             bool retorno = false;
@@ -113,10 +100,10 @@ namespace Electronicos
             }
             return retorno;
         }
-        public override string ToString()
+        /*public override string ToString()
         {
             return this.MostrarDatosGenerales();
-        }
+        }*/
         public override int GetHashCode()
         {
             return (int)this.precio;

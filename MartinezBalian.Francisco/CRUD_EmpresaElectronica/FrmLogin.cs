@@ -68,7 +68,12 @@ namespace CRUD_EmpresaElectronica
 
                 this.Hide();
                 FrmPrincipalEmpresa frmPrincipalEmpresa = new FrmPrincipalEmpresa();
-                frmPrincipalEmpresa.Show();
+                if(frmPrincipalEmpresa.ShowDialog() == DialogResult.OK)
+                {
+                    this.Show();
+                    txtBoxCorreo.Text = string.Empty;
+                    txtBoxClave.Text = string.Empty;
+                }
             }
             else
             {
@@ -84,7 +89,7 @@ namespace CRUD_EmpresaElectronica
             txtBoxClave.Text = listaUsuarios[i].Clave;
         }
 
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e)
+        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e) //sacar sino es necesario
         {
             Application.Exit();
         }

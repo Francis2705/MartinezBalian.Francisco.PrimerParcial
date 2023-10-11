@@ -12,7 +12,6 @@ namespace Electronicos
         private bool aceptaDiscosFisicos;
         private double memoriaTotal;
         private short velocidadDescargaMB;
-        private short velocidadCargaMB;
 
         //Propiedades
         public bool AceptaDiscosFisicos
@@ -48,47 +47,34 @@ namespace Electronicos
                 this.velocidadDescargaMB = value;
             }
         }
-        public short VelocidadCargaMB
-        {
-            get
-            {
-                return this.velocidadCargaMB;
-            }
-            set
-            {
-                this.velocidadCargaMB = value;
-            }
-        }
 
         //Constructores
-        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
-            : base(precio, medidaAlto, nombre, descripcion, tipoOrigen)
+        public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
+            : base(precio, nombre, marca, tipoOrigen)
         {
             this.aceptaDiscosFisicos = aceptaDiscosFisicos;
             this.memoriaTotal = 256;
             this.velocidadDescargaMB = 10;
-            this.velocidadCargaMB = 10;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
-        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
-            short velocidadDescargaMB, short velocidadCargaMB) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, aceptaDiscosFisicos)
+        public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
+            short velocidadDescargaMB) : this(precio, nombre, marca, tipoOrigen, aceptaDiscosFisicos)
         {
             this.velocidadDescargaMB = velocidadDescargaMB;
-            this.velocidadCargaMB = velocidadCargaMB;
         }
         //Sobrecarga de uno menos ↑
-        public Consola(double precio, double medidaAlto, string nombre, string descripcion, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
-            short velocidadDescargaMB, short velocidadCargaMB, double memoriaTotal) : this(precio, medidaAlto, nombre, descripcion, tipoOrigen, 
-                aceptaDiscosFisicos, velocidadDescargaMB, velocidadCargaMB)
+        public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
+            short velocidadDescargaMB, double memoriaTotal) : this(precio, nombre, marca, tipoOrigen, 
+                aceptaDiscosFisicos, velocidadDescargaMB)
         {
             this.memoriaTotal = memoriaTotal;
         }
         //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
-        protected override string MostrarDatosGenerales()
+        public override string MostrarDatosGenerales()
         {
-            return "Esto es una consola\n" + base.ToString();
+            return "Esto es una consola\n" + base.MostrarDatosGenerales();
         }
         public override string MostrarCaracteristicasEspecificas()
         {
@@ -105,7 +91,6 @@ namespace Electronicos
 
             sb.AppendLine($"Memoria total: {this.memoriaTotal}");
             sb.AppendLine($"Velocidad de descarga en MB: {this.velocidadDescargaMB}");
-            sb.AppendLine($"Velocidad de dcarga en MB: {this.velocidadCargaMB}");
 
             return sb.ToString();
         }
@@ -113,7 +98,7 @@ namespace Electronicos
         //Sobrecarga implicita y explicita
         public static implicit operator Consola(string nombreConsola)
         {
-            return new Consola(10000, 15, nombreConsola, "Consola sin descripcion", ETipoOrigen.INTERNACIONAL, false);
+            return new Consola(10000, nombreConsola, "Consola sin marca", ETipoOrigen.INTERNACIONAL, false);
         }
         public static explicit operator string(Consola nombreConsola) 
         {
