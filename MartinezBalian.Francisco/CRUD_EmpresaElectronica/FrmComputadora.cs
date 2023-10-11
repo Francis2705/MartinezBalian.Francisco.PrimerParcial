@@ -3,7 +3,6 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics.Eventing.Reader;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,49 +11,49 @@ using System.Windows.Forms;
 
 namespace CRUD_EmpresaElectronica
 {
-    public partial class FrmAgregarCelular : FrmAgregar
+    public partial class FrmComputadora : FrmAgregar
     {
-        public Celular celular;
+        public Computadora computadora;
         int precio;
-        int bateria;
-        int cantidadContactos;
-        bool asistente = false;
+        int cantidadNucleos;
+        double espacioDiscoSDD;
+        bool tactil = false;
         ETipoOrigen tipoOrigen;
-        public FrmAgregarCelular()
+        public FrmComputadora()
         {
             InitializeComponent();
-            cmBoxAsistenteVirtual.Items.Add("SI");
-            cmBoxAsistenteVirtual.Items.Add("NO");
-            cmBoxAsistenteVirtual.DropDownStyle = ComboBoxStyle.DropDownList;
+            cbBoxTactil.Items.Add("SI");
+            cbBoxTactil.Items.Add("NO");
+            cbBoxTactil.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        public FrmAgregarCelular(Celular celu) : this()
+        public FrmComputadora(Computadora computadora) : this()
         {
-            txtNombre.Text = celu.Nombre;
-            txtPrecio.Text = celu.Precio.ToString();
-            txtMarca.Text = celu.Marca;
-            txtBateria.Text = celu.Bateria.ToString();
-            txtCantidadContactos.Text = celu.CantidadContactos.ToString();
-            cmBoxOrigen.Text = celu.TipoOrigen.ToString();
-            if (celu.AsistenteVirtual)
+            txtNombre.Text = computadora.Nombre;
+            txtPrecio.Text = computadora.Precio.ToString();
+            txtMarca.Text = computadora.Marca;
+            txtBoxCantidadNucleos.Text = computadora.CantidadNucleos.ToString();
+            txtBoxSDD.Text = computadora.EspacioDiscoSSD.ToString();
+            cmBoxOrigen.Text = computadora.TipoOrigen.ToString();
+            if (computadora.EsTactil)
             {
-                cmBoxAsistenteVirtual.Text = "SI";
+                cbBoxTactil.Text = "SI";
             }
             else
             {
-                cmBoxAsistenteVirtual.Text = "NO";
+                cbBoxTactil.Text = "NO";
             }
         }
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (txtNombre.Text != string.Empty && int.TryParse(txtPrecio.Text, out precio) && txtMarca.Text != string.Empty &&
-                int.TryParse(txtBateria.Text, out bateria) && int.TryParse(txtCantidadContactos.Text, out cantidadContactos) &&
-                cmBoxAsistenteVirtual.Text != string.Empty && cmBoxOrigen.Text != string.Empty)
+                int.TryParse(txtBoxCantidadNucleos.Text, out cantidadNucleos) && double.TryParse(txtBoxSDD.Text, out espacioDiscoSDD) &&
+                cbBoxTactil.Text != string.Empty && cmBoxOrigen.Text != string.Empty)
             {
-                if (cmBoxAsistenteVirtual.Text == "SI")
+                if (cbBoxTactil.Text == "SI")
                 {
-                    asistente = true;
+                    tactil = true;
                 }
-                switch(cmBoxOrigen.Text)
+                switch (cmBoxOrigen.Text)
                 {
                     case "CHINO":
                         tipoOrigen = ETipoOrigen.CHINO;
@@ -73,7 +72,8 @@ namespace CRUD_EmpresaElectronica
                         break;
                 }
 
-                this.celular = new Celular(precio, txtNombre.Text, txtMarca.Text, tipoOrigen, bateria, cantidadContactos, asistente);
+                this.computadora = new Computadora(precio, txtNombre.Text, txtMarca.Text, tipoOrigen, tactil, espacioDiscoSDD, 
+                    cantidadNucleos);
                 this.DialogResult = DialogResult.OK;
             }
             else

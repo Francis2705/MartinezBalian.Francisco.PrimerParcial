@@ -16,7 +16,6 @@ namespace CRUD_EmpresaElectronica
 
         private void FrmLogin_Load(object sender, EventArgs e) //Aca oculto el de rellenar automaticamente
         {
-            //button1.Hide();
 
             if (File.Exists(@"../../../../MOCK_DATA.json"))
             {
@@ -68,7 +67,7 @@ namespace CRUD_EmpresaElectronica
 
                 this.Hide();
                 FrmPrincipalEmpresa frmPrincipalEmpresa = new FrmPrincipalEmpresa();
-                if(frmPrincipalEmpresa.ShowDialog() == DialogResult.OK)
+                if (frmPrincipalEmpresa.ShowDialog() == DialogResult.OK)
                 {
                     this.Show();
                     txtBoxCorreo.Text = string.Empty;

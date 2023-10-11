@@ -4,7 +4,13 @@
     <Compile Update="FrmAgregar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FrmAgregarCelular.cs">
+    <Compile Update="FrmCelular.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmComputadora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FrmConsola.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FrmLogin.cs">

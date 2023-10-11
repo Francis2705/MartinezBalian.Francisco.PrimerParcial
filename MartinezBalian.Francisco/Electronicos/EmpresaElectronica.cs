@@ -95,16 +95,17 @@ namespace Electronicos
         }
 
         //Metodos ordenamientos
-        public static int OrdenarArtefactosPorNombre(ArtefactoElectronico art1, ArtefactoElectronico art2, bool ascendente)
+        public static int OrdenarArtefactosPorNombreAscendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
-            if (ascendente)
+            return String.Compare(art1.Nombre, art2.Nombre);
+            /*if (ascendente)
             {
                 return String.Compare(art1.Nombre, art2.Nombre);
-            }
-            else
+            }*/
+            /*else
             {
                 return String.Compare(art2.Nombre, art1.Nombre);
-            }
+            }*/
             /*if (String.Compare(art1.Nombre, art2.Nombre) == 0)
             {
                 return 0;
@@ -118,16 +119,21 @@ namespace Electronicos
                 return 1;
             }*/
         }
-        public static int OrdenarArtefactosPorPrecio(ArtefactoElectronico art1, ArtefactoElectronico art2, bool ascendente)
+        public static int OrdenarArtefactosPorNombreDescendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
-            if (ascendente)
+            return String.Compare(art2.Nombre, art1.Nombre);
+        }
+        public static int OrdenarArtefactosPorPrecioAscendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
+        {
+            return art1.Precio.CompareTo(art2.Precio);
+            /*if (ascendente)
             {
                 return art1.Precio.CompareTo(art2.Precio);
             }
             else
             {
                 return art2.Precio.CompareTo(art1.Precio);
-            }
+            }*/
             /*if (art1.Precio.CompareTo(art2.Precio) < 0)
             {
                 Console.WriteLine("el valor de art1.Precio es menor al de art2.Precio");
@@ -140,6 +146,10 @@ namespace Electronicos
             {
                 Console.WriteLine("el valor de art1.Precio es mayor al de art2.Precio");
             }*/
+        }
+        public static int OrdenarArtefactosPorPrecioDescendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
+        {
+            return art2.Precio.CompareTo(art1.Precio);
         }
     }
 }

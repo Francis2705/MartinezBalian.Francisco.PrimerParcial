@@ -74,7 +74,7 @@ namespace Electronicos
         //Sobrescritura de metodos virtual e implementacion del abstract
         public override string MostrarDatosGenerales()
         {
-            return "Esto es una computadora\n" + base.MostrarDatosGenerales();
+            return "Computadora -> " + base.MostrarDatosGenerales();
         }
         public override string MostrarCaracteristicasEspecificas()
         {

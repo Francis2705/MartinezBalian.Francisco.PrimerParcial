@@ -1,6 +1,6 @@
 ﻿namespace CRUD_EmpresaElectronica
 {
-    partial class FrmAgregarCelular
+    partial class FrmCelular
     {
         /// <summary>
         /// Required designer variable.
