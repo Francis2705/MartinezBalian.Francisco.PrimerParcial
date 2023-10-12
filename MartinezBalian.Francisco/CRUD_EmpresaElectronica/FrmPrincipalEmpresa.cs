@@ -18,6 +18,8 @@ namespace CRUD_EmpresaElectronica
     {
         private EmpresaElectronica empresaElectronica = new EmpresaElectronica("Comcelcon", "Francis");
         private bool error;
+        private int cantidad;
+        //private int imagen;
 
         public FrmPrincipalEmpresa()
         {
@@ -31,7 +33,21 @@ namespace CRUD_EmpresaElectronica
 
             foreach (ArtefactoElectronico artefacto in empresaElectronica.ProductosElectronicos)
             {
-                lstBoxObjetos.Items.Add(artefacto); //agrego un objeto y se muestran sus datos
+                //if (artefacto is Celular)
+                //{
+                //    this.imagen = 0;
+                //}
+                //else if (artefacto is Computadora)
+                //{
+                //    this.imagen = 1;
+                //}
+                //else if (artefacto is Consola)
+                //{
+                //    this.imagen = 2;
+                //}
+                //lstBoxObjetos.Items.Add(artefacto, imagen);
+
+                lstBoxObjetos.Items.Add(artefacto); //Agrego un objeto y se muestran sus datos
                 //lstBoxObjetos.Items.Add(artefacto.ToString()); //Agrego un string con los datos del objeto
             }
         }
@@ -125,9 +141,16 @@ namespace CRUD_EmpresaElectronica
             frmVisualizadorUsuarios.ShowDialog();
         }
 
-        private void btnMostrarCaracteristicasEspecificas_Click(object sender, EventArgs e) //Incompleto (poner foto)
+        private void btnMostrarCaracteristicasEspecificas_Click(object sender, EventArgs e) //Completo
         {
-
+            if (this.lstBoxObjetos.SelectedIndex == -1)
+            {
+                MessageBox.Show("Debe seleccionar un producto para ver sus caracteristicas especificas");
+            }
+            else
+            {
+                MessageBox.Show($"{((ArtefactoElectronico)lstBoxObjetos.SelectedItem).MostrarCaracteristicasEspecificas()}");
+            }
         }
 
         private void btnOrdenar_Click(object sender, EventArgs e) //Completo
@@ -164,14 +187,16 @@ namespace CRUD_EmpresaElectronica
 
                     if (frmCeluar.DialogResult == DialogResult.OK)
                     {
-                        if (empresaElectronica != frmCeluar.celular)
+                        this.cantidad = empresaElectronica.ProductosElectronicos.Count;
+                        this.empresaElectronica += frmCeluar.celular; //empresaElectronica.ProductosElectronicos.Add(frmCeluar.celular);
+
+                        if (this.cantidad == this.empresaElectronica.ProductosElectronicos.Count)
                         {
-                            empresaElectronica += frmCeluar.celular; //empresaElectronica.ProductosElectronicos.Add(frmCeluar.celular);
-                            this.ActualizarVisor();
+                            MessageBox.Show("Error, producto existente");
                         }
                         else
                         {
-                            MessageBox.Show("Error, producto existente");
+                            this.ActualizarVisor();
                         }
                     }
                 }
@@ -182,15 +207,16 @@ namespace CRUD_EmpresaElectronica
 
                     if (frmComputadora.DialogResult == DialogResult.OK)
                     {
-                        if (empresaElectronica != frmComputadora.computadora)
+                        this.cantidad = empresaElectronica.ProductosElectronicos.Count;
+                        this.empresaElectronica += frmComputadora.computadora;
+
+                        if (this.cantidad == this.empresaElectronica.ProductosElectronicos.Count)
                         {
-                            empresaElectronica += frmComputadora.computadora;
-                            //empresaElectronica.ProductosElectronicos.Add(frmComputadora.computadora);
-                            this.ActualizarVisor();
+                            MessageBox.Show("Error, producto existente");
                         }
                         else
                         {
-                            MessageBox.Show("Error, producto existente");
+                            this.ActualizarVisor();
                         }
                     }
                 }
@@ -201,14 +227,16 @@ namespace CRUD_EmpresaElectronica
 
                     if (frmConsola.DialogResult == DialogResult.OK)
                     {
-                        if (empresaElectronica != frmConsola.consola)
+                        this.cantidad = empresaElectronica.ProductosElectronicos.Count;
+                        this.empresaElectronica += frmConsola.consola;
+
+                        if (this.cantidad == this.empresaElectronica.ProductosElectronicos.Count)
                         {
-                            empresaElectronica += frmConsola.consola; //empresaElectronica.ProductosElectronicos.Add(frmConsola.consola);
-                            this.ActualizarVisor();
+                            MessageBox.Show("Error, producto existente");
                         }
                         else
                         {
-                            MessageBox.Show("Error, producto existente");
+                            this.ActualizarVisor();
                         }
                     }
                 }
@@ -221,49 +249,49 @@ namespace CRUD_EmpresaElectronica
 
         private void btnModificar_Click(object sender, EventArgs e) //Completo
         {
-            if (lstBoxObjetos.SelectedIndex == -1)
+            if (this.lstBoxObjetos.SelectedIndex == -1)
             {
                 MessageBox.Show("No se selecciono ningun producto para modificiar");
             }
             else
             {
 
-                if (lstBoxObjetos.SelectedItem is Celular)
+                if (this.lstBoxObjetos.SelectedItem is Celular)
                 {
-                    Celular celu = (Celular)empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
+                    Celular celu = (Celular)this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
 
                     FrmCelular frmCeluar = new FrmCelular(celu);
                     frmCeluar.ShowDialog();
 
                     if (frmCeluar.DialogResult == DialogResult.OK)
                     {
-                        empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmCeluar.celular;
+                        this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmCeluar.celular;
                         this.ActualizarVisor();
                     }
                 }
-                else if (lstBoxObjetos.SelectedItem is Computadora)
+                else if (this.lstBoxObjetos.SelectedItem is Computadora)
                 {
-                    Computadora computadora = (Computadora)empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
+                    Computadora computadora = (Computadora)this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
 
                     FrmComputadora frmComputadora = new FrmComputadora(computadora);
                     frmComputadora.ShowDialog();
 
                     if (frmComputadora.DialogResult == DialogResult.OK)
                     {
-                        empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmComputadora.computadora;
+                        this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmComputadora.computadora;
                         this.ActualizarVisor();
                     }
                 }
-                else if (lstBoxObjetos.SelectedItem is Consola)
+                else if (this.lstBoxObjetos.SelectedItem is Consola)
                 {
-                    Consola consola = (Consola)empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
+                    Consola consola = (Consola)this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex];
 
                     FrmConsola frmConsola = new FrmConsola(consola);
                     frmConsola.ShowDialog();
 
                     if (frmConsola.DialogResult == DialogResult.OK)
                     {
-                        empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmConsola.consola;
+                        this.empresaElectronica.ProductosElectronicos[lstBoxObjetos.SelectedIndex] = frmConsola.consola;
                         this.ActualizarVisor();
                     }
                 }
@@ -272,7 +300,7 @@ namespace CRUD_EmpresaElectronica
 
         private void btnEliminar_Click(object sender, EventArgs e) //Completo
         {
-            if (lstBoxObjetos.SelectedIndex == -1)
+            if (this.lstBoxObjetos.SelectedIndex == -1)
             {
                 MessageBox.Show("Debe seleccionar un producto para eliminar");
             }
@@ -284,7 +312,7 @@ namespace CRUD_EmpresaElectronica
                 if (resultado == DialogResult.Yes)
                 {
                     //empresaElectronica.ProductosElectronicos.RemoveAt(lstBoxObjetos.SelectedIndex);
-                    empresaElectronica -= (ArtefactoElectronico)lstBoxObjetos.SelectedItem;
+                    this.empresaElectronica -= (ArtefactoElectronico)lstBoxObjetos.SelectedItem;
                     this.ActualizarVisor();
                 }
             }

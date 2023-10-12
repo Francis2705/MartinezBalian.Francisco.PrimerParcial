@@ -9,15 +9,6 @@
     <MemoriaTotal>65</MemoriaTotal>
     <VelocidadDescargaMB>878</VelocidadDescargaMB>
   </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Celular">
-    <Precio>2357</Precio>
-    <Nombre>dwdcc</Nombre>
-    <Marca>feffyfy</Marca>
-    <TipoOrigen>JAPONES</TipoOrigen>
-    <AsistenteVirtual>true</AsistenteVirtual>
-    <Bateria>32565</Bateria>
-    <CantidadContactos>4</CantidadContactos>
-  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Computadora">
     <Precio>5456</Precio>
     <Nombre>wfwf</Nombre>
@@ -26,5 +17,14 @@
     <EsTactil>false</EsTactil>
     <CantidadNucleos>54</CantidadNucleos>
     <EspacioDiscoSSD>67</EspacioDiscoSSD>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>324</Precio>
+    <Nombre>ffwf</Nombre>
+    <Marca>gre</Marca>
+    <TipoOrigen>INTERNACIONAL</TipoOrigen>
+    <AsistenteVirtual>false</AsistenteVirtual>
+    <Bateria>45</Bateria>
+    <CantidadContactos>6</CantidadContactos>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>
