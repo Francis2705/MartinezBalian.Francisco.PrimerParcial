@@ -19,7 +19,6 @@ namespace CRUD_EmpresaElectronica
         private EmpresaElectronica empresaElectronica = new EmpresaElectronica("Comcelcon", "Francis");
         private bool error;
         private int cantidad;
-        //private int imagen;
 
         public FrmPrincipalEmpresa()
         {
@@ -33,20 +32,6 @@ namespace CRUD_EmpresaElectronica
 
             foreach (ArtefactoElectronico artefacto in empresaElectronica.ProductosElectronicos)
             {
-                //if (artefacto is Celular)
-                //{
-                //    this.imagen = 0;
-                //}
-                //else if (artefacto is Computadora)
-                //{
-                //    this.imagen = 1;
-                //}
-                //else if (artefacto is Consola)
-                //{
-                //    this.imagen = 2;
-                //}
-                //lstBoxObjetos.Items.Add(artefacto, imagen);
-
                 lstBoxObjetos.Items.Add(artefacto); //Agrego un objeto y se muestran sus datos
                 //lstBoxObjetos.Items.Add(artefacto.ToString()); //Agrego un string con los datos del objeto
             }
@@ -149,7 +134,8 @@ namespace CRUD_EmpresaElectronica
             }
             else
             {
-                MessageBox.Show($"{((ArtefactoElectronico)lstBoxObjetos.SelectedItem).MostrarCaracteristicasEspecificas()}");
+                MessageBox.Show($"{((ArtefactoElectronico)lstBoxObjetos.SelectedItem).MostrarCaracteristicasEspecificas()}",
+                    "Caracteristicas especificas", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
 

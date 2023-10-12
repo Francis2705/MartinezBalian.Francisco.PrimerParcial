@@ -9,22 +9,22 @@
     <MemoriaTotal>65</MemoriaTotal>
     <VelocidadDescargaMB>878</VelocidadDescargaMB>
   </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Computadora">
-    <Precio>5456</Precio>
-    <Nombre>wfwf</Nombre>
-    <Marca>hgf</Marca>
-    <TipoOrigen>INTERNACIONAL</TipoOrigen>
-    <EsTactil>false</EsTactil>
-    <CantidadNucleos>54</CantidadNucleos>
-    <EspacioDiscoSSD>67</EspacioDiscoSSD>
-  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Celular">
     <Precio>324</Precio>
     <Nombre>ffwf</Nombre>
     <Marca>gre</Marca>
     <TipoOrigen>INTERNACIONAL</TipoOrigen>
     <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>45</Bateria>
+    <Bateria>4533</Bateria>
     <CantidadContactos>6</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>7</Precio>
+    <Nombre>gg</Nombre>
+    <Marca>gtr</Marca>
+    <TipoOrigen>INTERNACIONAL</TipoOrigen>
+    <AsistenteVirtual>true</AsistenteVirtual>
+    <Bateria>5</Bateria>
+    <CantidadContactos>5</CantidadContactos>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>

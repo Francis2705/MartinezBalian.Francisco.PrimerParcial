@@ -36,7 +36,6 @@
             btnMostrarCaracteristicasEspecificas = new Button();
             rbNombreAscendentemente = new RadioButton();
             rbNombreDescendentemente = new RadioButton();
-            lstBoxObjetos = new ListBox();
             btnOrdenar = new Button();
             rbPrecioAscendentemente = new RadioButton();
             rbPrecioDescendentemente = new RadioButton();
@@ -44,6 +43,7 @@
             lblAgregarProducto = new Label();
             openFileDialog1 = new OpenFileDialog();
             saveFileDialog1 = new SaveFileDialog();
+            lstBoxObjetos = new ListBox();
             SuspendLayout();
             // 
             // btnVisualizadorUsuariosLogueo
@@ -128,15 +128,6 @@
             rbNombreDescendentemente.Text = "Ordenar por nombre descendentemente";
             rbNombreDescendentemente.UseVisualStyleBackColor = true;
             // 
-            // lstBoxObjetos
-            // 
-            lstBoxObjetos.FormattingEnabled = true;
-            lstBoxObjetos.ItemHeight = 20;
-            lstBoxObjetos.Location = new Point(28, 28);
-            lstBoxObjetos.Name = "lstBoxObjetos";
-            lstBoxObjetos.Size = new Size(788, 464);
-            lstBoxObjetos.TabIndex = 8;
-            // 
             // btnOrdenar
             // 
             btnOrdenar.Location = new Point(507, 540);
@@ -190,17 +181,26 @@
             // 
             openFileDialog1.FileName = "openFileDialog1";
             // 
+            // lstBoxObjetos
+            // 
+            lstBoxObjetos.FormattingEnabled = true;
+            lstBoxObjetos.ItemHeight = 20;
+            lstBoxObjetos.Location = new Point(40, 28);
+            lstBoxObjetos.Name = "lstBoxObjetos";
+            lstBoxObjetos.Size = new Size(762, 464);
+            lstBoxObjetos.TabIndex = 14;
+            // 
             // FrmPrincipalEmpresa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1037, 645);
+            Controls.Add(lstBoxObjetos);
             Controls.Add(lblAgregarProducto);
             Controls.Add(cmBoxProductos);
             Controls.Add(rbPrecioDescendentemente);
             Controls.Add(rbPrecioAscendentemente);
             Controls.Add(btnOrdenar);
-            Controls.Add(lstBoxObjetos);
             Controls.Add(rbNombreDescendentemente);
             Controls.Add(rbNombreAscendentemente);
             Controls.Add(btnMostrarCaracteristicasEspecificas);
@@ -228,7 +228,6 @@
         private Button btnMostrarCaracteristicasEspecificas;
         private RadioButton rbNombreAscendentemente;
         private RadioButton rbNombreDescendentemente;
-        private ListBox lstBoxObjetos;
         private Button btnOrdenar;
         private RadioButton rbPrecioAscendentemente;
         private RadioButton rbPrecioDescendentemente;
@@ -236,5 +235,6 @@
         private Label lblAgregarProducto;
         private OpenFileDialog openFileDialog1;
         private SaveFileDialog saveFileDialog1;
+        private ListBox lstBoxObjetos;
     }
 }
