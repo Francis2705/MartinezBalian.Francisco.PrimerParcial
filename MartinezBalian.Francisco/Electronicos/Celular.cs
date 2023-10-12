@@ -49,8 +49,12 @@ namespace Electronicos
                 this.cantidadContactos = value;
             }
         }
-        
+
         //Constructores
+        public Celular()
+        {
+
+        }
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria)
             : base(precio, nombre, marca, tipoOrigen)
         {

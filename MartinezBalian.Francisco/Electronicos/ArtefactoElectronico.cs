@@ -1,8 +1,13 @@
 ﻿using System.Text;
 using System.Text.Json.Serialization;
+using System.Xml.Serialization;
 
 namespace Electronicos
 {
+    [XmlInclude(typeof(Celular))]
+    [XmlInclude(typeof(Consola))]
+    [XmlInclude(typeof(Computadora))]
+    [XmlRoot("ArtefactosElectronicos")]
     public abstract class ArtefactoElectronico
     {
         //Atributos
@@ -58,6 +63,10 @@ namespace Electronicos
         }
 
         //Constructor
+        public ArtefactoElectronico()
+        {
+
+        }
         public ArtefactoElectronico(double precio, string nombre, string marca, ETipoOrigen tipoOrigen)
         {
             this.precio = precio;
@@ -74,7 +83,7 @@ namespace Electronicos
             sb.AppendLine($"Precio: {this.precio} - ");
             sb.AppendLine($"Nombre: {this.nombre} - ");
             sb.AppendLine($"Marca: {this.marca} - ");
-            sb.AppendLine($"Tipo: {this.tipoOrigen}");
+            sb.AppendLine($"Origen: {this.tipoOrigen}");
             
             return sb.ToString();
         }
@@ -90,7 +99,7 @@ namespace Electronicos
             return !(art1 == art2);
         }
 
-        //Sobrescritura del Equals() y el GetHashCode() (chequear estas dos sobreescrituras)
+        //Sobrescritura del Equals(), ToString() y el GetHashCode()
         public override bool Equals(object? obj)
         {
             bool retorno = false;
@@ -100,10 +109,10 @@ namespace Electronicos
             }
             return retorno;
         }
-        /*public override string ToString()
+        public override string ToString()
         {
             return this.MostrarDatosGenerales();
-        }*/
+        }
         public override int GetHashCode()
         {
             return (int)this.precio;

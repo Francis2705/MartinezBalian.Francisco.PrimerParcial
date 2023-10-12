@@ -6,7 +6,7 @@ namespace CRUD_EmpresaElectronica
 {
     public partial class FrmLogin : Form
     {
-        List<UsuarioElectronico> listaUsuarios = new List<UsuarioElectronico>();
+        private List<UsuarioElectronico> listaUsuarios = new List<UsuarioElectronico>();
         static UsuarioElectronico usuarioLogueado = null;
 
         public FrmLogin()
@@ -23,7 +23,7 @@ namespace CRUD_EmpresaElectronica
                 {
                     string jsonString = lectorJson.ReadToEnd();
 
-                    listaUsuarios = JsonSerializer.Deserialize<List<UsuarioElectronico>>(jsonString);
+                    this.listaUsuarios = JsonSerializer.Deserialize<List<UsuarioElectronico>>(jsonString);
                 }
             }
             else
@@ -39,7 +39,7 @@ namespace CRUD_EmpresaElectronica
 
             foreach (UsuarioElectronico usuario in listaUsuarios)
             {
-                if (usuario.Correo == txtBoxCorreo.Text && usuario.Clave == txtBoxClave.Text)
+                if (usuario.correo == txtBoxCorreo.Text && usuario.clave == txtBoxClave.Text)
                 {
                     usuarioValido = true;
                     usuarioLogueado = usuario;
@@ -51,12 +51,12 @@ namespace CRUD_EmpresaElectronica
                 Encoding miCodificacion = Encoding.UTF8;
                 StringBuilder sb = new StringBuilder();
 
-                sb.AppendLine($"Apellido: {usuarioLogueado.Apellido}");
-                sb.AppendLine($"Nombre: {usuarioLogueado.Nombre}");
-                sb.AppendLine($"Legajo: {usuarioLogueado.Legajo}");
-                sb.AppendLine($"Correo: {usuarioLogueado.Correo}");
-                sb.AppendLine($"Clave: {usuarioLogueado.Clave}");
-                sb.AppendLine($"Perfil: {usuarioLogueado.Perfil}");
+                sb.AppendLine($"Apellido: {usuarioLogueado.apellido}");
+                sb.AppendLine($"Nombre: {usuarioLogueado.nombre}");
+                sb.AppendLine($"Legajo: {usuarioLogueado.legajo}");
+                sb.AppendLine($"Correo: {usuarioLogueado.correo}");
+                sb.AppendLine($"Clave: {usuarioLogueado.clave}");
+                sb.AppendLine($"Perfil: {usuarioLogueado.perfil}");
                 sb.AppendLine($"Fecha de logueo: {DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}");
                 sb.ToString();
 
@@ -84,18 +84,13 @@ namespace CRUD_EmpresaElectronica
         {
             Random random = new Random();
             int i = random.Next(0, listaUsuarios.Count);
-            txtBoxCorreo.Text = listaUsuarios[i].Correo;
-            txtBoxClave.Text = listaUsuarios[i].Clave;
-        }
-
-        private void FrmLogin_FormClosing(object sender, FormClosingEventArgs e) //sacar sino es necesario
-        {
-            Application.Exit();
+            txtBoxCorreo.Text = listaUsuarios[i].correo;
+            txtBoxClave.Text = listaUsuarios[i].clave;
         }
 
         public static UsuarioElectronico GetUsuarioElectronico()
         {
-            return usuarioLogueado;
+            return FrmLogin.usuarioLogueado;
         }
     }
 }

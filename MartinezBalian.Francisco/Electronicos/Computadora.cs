@@ -49,6 +49,10 @@ namespace Electronicos
         }
 
         //Constructores
+        public Computadora()
+        {
+
+        }
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil)
             : base(precio, nombre, marca, tipoOrigen)
         {

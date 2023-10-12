@@ -8,16 +8,16 @@ namespace Electronicos
 {
     public class UsuarioElectronico
     {
-        public string Apellido { get; set; }
-        public string Nombre { get; set; }
-        public int Legajo { get; set; }
-        public string Correo { get; set; }
-        public string Clave { get; set; }
-        public string Perfil { get; set; }
+        public string apellido { get; set; }
+        public string nombre { get; set; }
+        public int legajo { get; set; }
+        public string correo { get; set; }
+        public string clave { get; set; }
+        public string perfil { get; set; }
 
         public override string ToString()
         {
-            return $"Nombre: {Nombre} - Apellido: {Apellido}\n";
+            return $"Nombre: {nombre} - Apellido: {apellido}\n";
         }
     }
 }

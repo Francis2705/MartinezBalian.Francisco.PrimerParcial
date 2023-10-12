@@ -109,7 +109,6 @@ namespace CRUD_EmpresaElectronica
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
-            FormClosing += FrmLogin_FormClosing;
             Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();

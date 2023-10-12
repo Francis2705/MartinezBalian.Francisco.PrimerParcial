@@ -9,17 +9,20 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Xml.Serialization;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CRUD_EmpresaElectronica
 {
-    public partial class FrmPrincipalEmpresa : Form //ARREGLAR PROBLEMA DE SERIALIZACION
+    public partial class FrmPrincipalEmpresa : Form
     {
         private EmpresaElectronica empresaElectronica = new EmpresaElectronica("Comcelcon", "Francis");
+        private bool error;
 
         public FrmPrincipalEmpresa()
         {
             InitializeComponent();
+            this.error = false;
         }
 
         private void ActualizarVisor() //Completo
@@ -33,26 +36,86 @@ namespace CRUD_EmpresaElectronica
             }
         }
 
-        private void FrmPrincipalEmpresa_FormClosing(object sender, FormClosingEventArgs e)//Incompleto FILE CON OPCIONES DONDE GUARDAR
+        private void FrmPrincipalEmpresa_FormClosing(object sender, FormClosingEventArgs e) //Completo
         {
-            DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar la sesion?",
-                "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-
-            if (resultado == DialogResult.No)
+            if (error)
             {
-                e.Cancel = true;
+                this.DialogResult = DialogResult.OK;
             }
             else
             {
-                JsonSerializerOptions serializerOptions = new JsonSerializerOptions();
-                serializerOptions.WriteIndented = true;
+                DialogResult resultado = MessageBox.Show("¿Estás seguro de que quieres cerrar la sesion?",
+                    "Confirmar cierre", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
 
-                string objJson = JsonSerializer.Serialize(empresaElectronica.ProductosElectronicos, serializerOptions);
-                using (StreamWriter escritorJson = new StreamWriter(@"../../../../productosElectronicos.json"))
+                if (resultado == DialogResult.No)
                 {
-                    escritorJson.WriteLine(objJson);
+                    e.Cancel = true;
                 }
-                DialogResult = DialogResult.OK;
+                else
+                {
+                    using (SaveFileDialog saveDialog = new SaveFileDialog())
+                    {
+                        saveDialog.Filter = "XML Files (*.xml)|*.xml";
+                        if (saveDialog.ShowDialog() == DialogResult.OK)
+                        {
+                            string fileName = saveDialog.FileName;
+
+                            XmlSerializer serializer = new XmlSerializer(typeof(List<ArtefactoElectronico>));
+
+                            using (FileStream stream = new FileStream(fileName, FileMode.Create))
+                            {
+                                serializer.Serialize(stream, empresaElectronica.ProductosElectronicos);
+                            }
+                            this.DialogResult = DialogResult.OK;
+                        }
+                        else
+                        {
+                            e.Cancel = true;
+                        }
+                    }
+                }
+            }
+        }
+
+        private void FrmPrincipalEmpresa_Load(object sender, EventArgs e) //Completo
+        {
+            UsuarioElectronico usuarioElectronico = FrmLogin.GetUsuarioElectronico();
+
+            lblUsuarioInfo.Text = $"Nombre: {usuarioElectronico.nombre}\nFecha: {DateTime.Now.ToString("yyyy-MM-dd")}";
+
+            cmBoxProductos.Items.Add("Celular");
+            cmBoxProductos.Items.Add("Computadora");
+            cmBoxProductos.Items.Add("Consola");
+            cmBoxProductos.DropDownStyle = ComboBoxStyle.DropDownList;
+
+            using (OpenFileDialog openDialog = new OpenFileDialog())
+            {
+                openDialog.Filter = "XML Files (*.xml)|*.xml";
+                if (openDialog.ShowDialog() == DialogResult.OK)
+                {
+                    string fileName = openDialog.FileName;
+                    XmlSerializer serializer = new XmlSerializer(typeof(List<ArtefactoElectronico>));
+
+                    try
+                    {
+                        using (FileStream stream = new FileStream(fileName, FileMode.Open))
+                        {
+                            empresaElectronica.ProductosElectronicos = (List<ArtefactoElectronico>)serializer.Deserialize(stream);
+                        }
+                        this.ActualizarVisor();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Error: {ex}");
+                        this.error = true;
+                        this.DialogResult = DialogResult.OK; //Hago esto para llamar al FormClosing
+                    }
+                }
+                else
+                {
+                    this.error = true;
+                    this.DialogResult = DialogResult.OK; //Hago esto para llamar al FormClosing
+                }
             }
         }
 
@@ -60,27 +123,6 @@ namespace CRUD_EmpresaElectronica
         {
             FrmVisualizadorUsuarios frmVisualizadorUsuarios = new FrmVisualizadorUsuarios();
             frmVisualizadorUsuarios.ShowDialog();
-        }
-
-        private void FrmPrincipalEmpresa_Load(object sender, EventArgs e)//Incompleto FILE CON OPCIONES DONDE GUARDAR
-        {
-            UsuarioElectronico usuarioElectronico = FrmLogin.GetUsuarioElectronico();
-
-            lblUsuarioInfo.Text = $"Nombre: {usuarioElectronico.Nombre}\nFecha: {DateTime.Now.ToString("yyyy-MM-dd")}";
-
-            cmBoxProductos.Items.Add("Celular");
-            cmBoxProductos.Items.Add("Computadora");
-            cmBoxProductos.Items.Add("Consola");
-            cmBoxProductos.DropDownStyle = ComboBoxStyle.DropDownList;
-
-            /*using (StreamReader lectorJson = new StreamReader(@"../../../../productosElectronicos.json"))
-            {
-                string jsonString = lectorJson.ReadToEnd();
-
-                empresaElectronica.ProductosElectronicos = (List<ArtefactoElectronico>)JsonSerializer.Deserialize(jsonString, 
-                typeof(List<ArtefactoElectronico>));
-            }
-            this.ActualizarVisor();*/
         }
 
         private void btnMostrarCaracteristicasEspecificas_Click(object sender, EventArgs e) //Incompleto (poner foto)

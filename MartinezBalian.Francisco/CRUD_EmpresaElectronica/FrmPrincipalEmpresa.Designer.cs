@@ -42,6 +42,8 @@
             rbPrecioDescendentemente = new RadioButton();
             cmBoxProductos = new ComboBox();
             lblAgregarProducto = new Label();
+            openFileDialog1 = new OpenFileDialog();
+            saveFileDialog1 = new SaveFileDialog();
             SuspendLayout();
             // 
             // btnVisualizadorUsuariosLogueo
@@ -184,6 +186,10 @@
             lblAgregarProducto.TabIndex = 13;
             lblAgregarProducto.Text = "Seleccionar producto";
             // 
+            // openFileDialog1
+            // 
+            openFileDialog1.FileName = "openFileDialog1";
+            // 
             // FrmPrincipalEmpresa
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -228,5 +234,7 @@
         private RadioButton rbPrecioDescendentemente;
         private ComboBox cmBoxProductos;
         private Label lblAgregarProducto;
+        private OpenFileDialog openFileDialog1;
+        private SaveFileDialog saveFileDialog1;
     }
 }

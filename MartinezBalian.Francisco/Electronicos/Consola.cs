@@ -49,6 +49,10 @@ namespace Electronicos
         }
 
         //Constructores
+        public Consola()
+        {
+
+        }
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
             : base(precio, nombre, marca, tipoOrigen)
         {

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArtefactoElectronico xsi:type="Consola">
+    <Precio>23243242</Precio>
+    <Nombre>ferg</Nombre>
+    <Marca>rge</Marca>
+    <TipoOrigen>KOREANO</TipoOrigen>
+    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
+    <MemoriaTotal>65</MemoriaTotal>
+    <VelocidadDescargaMB>878</VelocidadDescargaMB>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>2357</Precio>
+    <Nombre>dwdcc</Nombre>
+    <Marca>feffyfy</Marca>
+    <TipoOrigen>JAPONES</TipoOrigen>
+    <AsistenteVirtual>true</AsistenteVirtual>
+    <Bateria>32565</Bateria>
+    <CantidadContactos>4</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>5456</Precio>
+    <Nombre>wfwf</Nombre>
+    <Marca>hgf</Marca>
+    <TipoOrigen>INTERNACIONAL</TipoOrigen>
+    <EsTactil>false</EsTactil>
+    <CantidadNucleos>54</CantidadNucleos>
+    <EspacioDiscoSSD>67</EspacioDiscoSSD>
+  </ArtefactoElectronico>
+</ArrayOfArtefactoElectronico>
