@@ -45,9 +45,10 @@ namespace CRUD_EmpresaElectronica
         }
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != string.Empty && int.TryParse(txtPrecio.Text, out precio) && txtMarca.Text != string.Empty &&
-                int.TryParse(txtBoxCantidadNucleos.Text, out cantidadNucleos) && double.TryParse(txtBoxSDD.Text, out espacioDiscoSDD) &&
-                cbBoxTactil.Text != string.Empty && cmBoxOrigen.Text != string.Empty)
+            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) &&
+                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBoxCantidadNucleos.Text, out cantidadNucleos) && 
+                double.TryParse(txtBoxSDD.Text, out espacioDiscoSDD) && cbBoxTactil.Text != string.Empty && 
+                cmBoxOrigen.Text != string.Empty)
             {
                 if (cbBoxTactil.Text == "SI")
                 {
@@ -72,7 +73,7 @@ namespace CRUD_EmpresaElectronica
                         break;
                 }
 
-                this.computadora = new Computadora(precio, txtNombre.Text, txtMarca.Text, tipoOrigen, tactil, espacioDiscoSDD, 
+                this.computadora = new Computadora(precio, txtNombre.Text, txtMarca.Text, tipoOrigen, tactil, espacioDiscoSDD,
                     cantidadNucleos);
                 this.DialogResult = DialogResult.OK;
             }

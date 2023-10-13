@@ -34,6 +34,15 @@ namespace Electronicos
             set
             {
                 this.cantidadNucleos = value;
+
+                if (this.cantidadNucleos > 12)
+                {
+                    this.cantidadNucleos = 12;
+                }
+                else if (this.cantidadNucleos <= 0)
+                {
+                    this.cantidadNucleos = 1;
+                }
             }
         }
         public double EspacioDiscoSSD
@@ -45,6 +54,15 @@ namespace Electronicos
             set
             {
                 this.espacioDiscoSSD = value;
+
+                if (this.espacioDiscoSSD > 2048)
+                {
+                    this.espacioDiscoSSD = 2048;
+                }
+                else if (this.espacioDiscoSSD < 32)
+                {
+                    this.espacioDiscoSSD = 32;
+                }
             }
         }
 
@@ -58,20 +76,20 @@ namespace Electronicos
         {
             this.esTactil = esTactil;
             this.cantidadNucleos = 2;
-            this.espacioDiscoSSD = 100;
+            this.espacioDiscoSSD = 128;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
             double espacioDiscoSSD) : this(precio, nombre, marca, tipoOrigen, esTactil)
         {
-            this.espacioDiscoSSD = espacioDiscoSSD;
+            this.EspacioDiscoSSD = espacioDiscoSSD;
         }
         //Sobrecarga de uno menos ↑
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
             double espacioDiscoSSD, int cantidadNucleos) : this(precio, nombre, marca, tipoOrigen,
                 esTactil, espacioDiscoSSD)
         {
-            this.cantidadNucleos = cantidadNucleos;
+            this.CantidadNucleos = cantidadNucleos;
         }
         //Sobrecarga de todos los atributos ↑
 
@@ -140,27 +158,13 @@ namespace Electronicos
         }
 
         //Metodos "normales" y sobrecarga
-        public int AgregarEspacioSSD() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Agregado rapido!)
+        public void AgregarEspacioSSD()
         {
-            int retorno = 0;
-            this.espacioDiscoSSD += 50;
-            if (this.espacioDiscoSSD > 256)
-            {
-                this.espacioDiscoSSD = 256;
-                retorno = 1;
-            }
-            return retorno;
+            this.EspacioDiscoSSD += 50;
         }
-        public int AgregarEspacioSSD(int num) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        public void AgregarEspacioSSD(int num)
         {
-            int retorno = 0;
             this.espacioDiscoSSD += num;
-            if (this.espacioDiscoSSD > 256)
-            {
-                this.espacioDiscoSSD = 256;
-                retorno = 1;
-            }
-            return retorno;
         }
     }
 }

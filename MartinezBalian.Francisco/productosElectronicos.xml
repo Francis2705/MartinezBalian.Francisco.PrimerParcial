@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>1</Precio>
+    <Nombre>bgfhfg</Nombre>
+    <Marca>gkg</Marca>
+    <TipoOrigen>CHINO</TipoOrigen>
+    <EsTactil>true</EsTactil>
+    <CantidadNucleos>1</CantidadNucleos>
+    <EspacioDiscoSSD>32</EspacioDiscoSSD>
+  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Consola">
     <Precio>23243242</Precio>
     <Nombre>ferg</Nombre>
@@ -7,24 +16,33 @@
     <TipoOrigen>KOREANO</TipoOrigen>
     <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
     <MemoriaTotal>65</MemoriaTotal>
-    <VelocidadDescargaMB>878</VelocidadDescargaMB>
+    <VelocidadDescargaMB>500</VelocidadDescargaMB>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Celular">
-    <Precio>324</Precio>
-    <Nombre>ffwf</Nombre>
-    <Marca>gre</Marca>
-    <TipoOrigen>INTERNACIONAL</TipoOrigen>
-    <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>4533</Bateria>
-    <CantidadContactos>6</CantidadContactos>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Celular">
-    <Precio>7</Precio>
-    <Nombre>gg</Nombre>
-    <Marca>gtr</Marca>
-    <TipoOrigen>INTERNACIONAL</TipoOrigen>
+    <Precio>1231312</Precio>
+    <Nombre>gregerg</Nombre>
+    <Marca>sgsgs</Marca>
+    <TipoOrigen>CHINO</TipoOrigen>
     <AsistenteVirtual>true</AsistenteVirtual>
-    <Bateria>5</Bateria>
-    <CantidadContactos>5</CantidadContactos>
+    <Bateria>54</Bateria>
+    <CantidadContactos>200</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>1</Precio>
+    <Nombre>jfjfgj</Nombre>
+    <Marca>kukuui</Marca>
+    <TipoOrigen>AMERICANO</TipoOrigen>
+    <AsistenteVirtual>true</AsistenteVirtual>
+    <Bateria>100</Bateria>
+    <CantidadContactos>200</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Consola">
+    <Precio>34</Precio>
+    <Nombre>vdsv</Nombre>
+    <Marca>gt</Marca>
+    <TipoOrigen>AMERICANO</TipoOrigen>
+    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
+    <MemoriaTotal>65</MemoriaTotal>
+    <VelocidadDescargaMB>75</VelocidadDescargaMB>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>

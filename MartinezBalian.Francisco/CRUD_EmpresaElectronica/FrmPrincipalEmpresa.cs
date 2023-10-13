@@ -16,7 +16,7 @@ namespace CRUD_EmpresaElectronica
 {
     public partial class FrmPrincipalEmpresa : Form
     {
-        private EmpresaElectronica empresaElectronica = new EmpresaElectronica("Comcelcon", "Francis");
+        private EmpresaElectronica empresaElectronica = new EmpresaElectronica("Comcelcon", "Francisco");
         private bool error;
         private int cantidad;
 

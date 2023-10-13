@@ -16,7 +16,7 @@ namespace Electronicos
         protected string marca;
         protected ETipoOrigen tipoOrigen;
 
-        //Propiedades (publicas para la serializacion)
+        //Propiedades
         public double Precio 
         {
             get
@@ -26,6 +26,11 @@ namespace Electronicos
             set
             {
                 this.precio = value;
+
+                if (this.precio < 0)
+                {
+                    this.precio = 1;
+                }
             }
         }
         public string Nombre 
@@ -69,7 +74,7 @@ namespace Electronicos
         }
         public ArtefactoElectronico(double precio, string nombre, string marca, ETipoOrigen tipoOrigen)
         {
-            this.precio = precio;
+            this.Precio = precio;
             this.nombre = nombre;
             this.marca = marca;
             this.tipoOrigen = tipoOrigen;
@@ -80,7 +85,7 @@ namespace Electronicos
         {
             StringBuilder sb = new StringBuilder();
 
-            sb.AppendLine($"Precio: {this.precio} - ");
+            sb.AppendLine($"Precio: U$S {this.precio} - ");
             sb.AppendLine($"Nombre: {this.nombre} - ");
             sb.AppendLine($"Marca: {this.marca} - ");
             sb.AppendLine($"Origen: {this.tipoOrigen}");
@@ -115,7 +120,7 @@ namespace Electronicos
         }
         public override int GetHashCode()
         {
-            return (int)this.precio;
+            return (int)this.Precio;
         }
     }
 }

@@ -67,7 +67,7 @@
             // 
             txtBoxCantidadNucleos.Location = new Point(65, 237);
             txtBoxCantidadNucleos.Name = "txtBoxCantidadNucleos";
-            txtBoxCantidadNucleos.PlaceholderText = "Ingrese la cantidad de nucleos";
+            txtBoxCantidadNucleos.PlaceholderText = "Ingrese la cantidad de nucleos (maximo 12)";
             txtBoxCantidadNucleos.Size = new Size(328, 27);
             txtBoxCantidadNucleos.TabIndex = 13;
             // 
@@ -75,7 +75,7 @@
             // 
             txtBoxSDD.Location = new Point(65, 299);
             txtBoxSDD.Name = "txtBoxSDD";
-            txtBoxSDD.PlaceholderText = "Ingrese espacio del disco SDD";
+            txtBoxSDD.PlaceholderText = "Ingrese espacio del disco SDD (maximo 2048)";
             txtBoxSDD.Size = new Size(328, 27);
             txtBoxSDD.TabIndex = 14;
             // 

@@ -67,7 +67,7 @@
             // 
             txtCantidadContactos.Location = new Point(65, 307);
             txtCantidadContactos.Name = "txtCantidadContactos";
-            txtCantidadContactos.PlaceholderText = "Ingrese la cantidad de contactos";
+            txtCantidadContactos.PlaceholderText = "Ingrese la cantidad de contactos (maximo 200)";
             txtCantidadContactos.Size = new Size(328, 27);
             txtCantidadContactos.TabIndex = 13;
             // 
@@ -75,7 +75,7 @@
             // 
             txtBateria.Location = new Point(65, 238);
             txtBateria.Name = "txtBateria";
-            txtBateria.PlaceholderText = "Ingrese la bateria";
+            txtBateria.PlaceholderText = "Ingrese la bateria (maximo 100)";
             txtBateria.Size = new Size(328, 27);
             txtBateria.TabIndex = 14;
             // 
@@ -87,7 +87,7 @@
             cmBoxAsistenteVirtual.Size = new Size(151, 28);
             cmBoxAsistenteVirtual.TabIndex = 15;
             // 
-            // FrmAgregarCelular
+            // FrmCelular
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -98,8 +98,12 @@
             Controls.Add(lblAsistenteVirtual);
             Controls.Add(lblCantidadDeContactos);
             Controls.Add(lblBateria);
-            Name = "FrmAgregarCelular";
+            Name = "FrmCelular";
             Text = "FrmAgregarCelular";
+            Controls.SetChildIndex(cmBoxOrigen, 0);
+            Controls.SetChildIndex(txtPrecio, 0);
+            Controls.SetChildIndex(txtNombre, 0);
+            Controls.SetChildIndex(txtMarca, 0);
             Controls.SetChildIndex(lblBateria, 0);
             Controls.SetChildIndex(lblCantidadDeContactos, 0);
             Controls.SetChildIndex(lblAsistenteVirtual, 0);

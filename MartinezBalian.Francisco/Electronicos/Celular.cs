@@ -36,6 +36,15 @@ namespace Electronicos
             set
             {
                 this.bateria = value;
+
+                if (this.bateria > 100)
+                {
+                    this.bateria = 100;
+                }
+                else if (this.bateria < 0)
+                {
+                    this.bateria = 0;
+                }
             }
         }
         public int CantidadContactos
@@ -47,6 +56,14 @@ namespace Electronicos
             set
             {
                 this.cantidadContactos = value;
+                if (this.cantidadContactos > 200)
+                {
+                    this.cantidadContactos = 200;
+                }
+                else if (this.cantidadContactos < 0)
+                {
+                    this.cantidadContactos = 0;
+                }
             }
         }
 
@@ -58,7 +75,7 @@ namespace Electronicos
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria)
             : base(precio, nombre, marca, tipoOrigen)
         {
-            this.bateria = bateria;
+            this.Bateria = bateria;
             this.asistenteVirtual = false;
             this.cantidadContactos = 0;
         }
@@ -66,7 +83,7 @@ namespace Electronicos
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
             int cantidadContactos) : this(precio, nombre, marca, tipoOrigen, bateria)
         {
-            this.cantidadContactos = cantidadContactos;
+            this.CantidadContactos = cantidadContactos;
         }
         //Sobrecarga de uno menos ↑
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
@@ -94,7 +111,7 @@ namespace Electronicos
                 sb.AppendLine("No tiene asistente virtual");
             }
 
-            sb.AppendLine($"Bateria: {this.bateria}");
+            sb.AppendLine($"Bateria: {this.bateria}%");
             sb.AppendLine($"Cantidad de contactos: {this.cantidadContactos}");
 
             return sb.ToString();
@@ -143,27 +160,13 @@ namespace Electronicos
         }
 
         //Metodos "normales" y sobrecarga
-        public int RecargarBateria() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Recarga rapida!)
+        public void RecargarBateria()
         {
-            int retorno = 0;
-            this.bateria += 10;
-            if (this.bateria > 100)
-            {
-                this.bateria = 100;
-                retorno = 1;
-            }
-            return retorno;
+            this.Bateria += 10;
         }
-        public int RecargarBateria(int porcentaje) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        public void RecargarBateria(int porcentaje)
         {
-            int retorno = 0;
-            this.bateria += porcentaje;
-            if (this.bateria > 100)
-            {
-                this.bateria = 100;
-                retorno = 1;
-            }
-            return retorno;
+            this.Bateria += porcentaje;
         }
     }
 }

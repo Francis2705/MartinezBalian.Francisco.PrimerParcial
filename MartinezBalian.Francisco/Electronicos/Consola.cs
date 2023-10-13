@@ -34,6 +34,15 @@ namespace Electronicos
             set
             {
                 this.memoriaTotal = value;
+
+                if (this.memoriaTotal > 2048)
+                {
+                    this.memoriaTotal = 2048;
+                }
+                else if (this.memoriaTotal < 64)
+                {
+                    this.memoriaTotal = 64;
+                }
             }
         }
         public short VelocidadDescargaMB
@@ -45,6 +54,15 @@ namespace Electronicos
             set
             {
                 this.velocidadDescargaMB = value;
+
+                if (this.velocidadDescargaMB > 500)
+                {
+                    this.velocidadDescargaMB = 500;
+                }
+                else if (this.velocidadDescargaMB < 0)
+                {
+                    this.velocidadDescargaMB = 10;
+                }
             }
         }
 
@@ -57,21 +75,21 @@ namespace Electronicos
             : base(precio, nombre, marca, tipoOrigen)
         {
             this.aceptaDiscosFisicos = aceptaDiscosFisicos;
-            this.memoriaTotal = 256;
-            this.velocidadDescargaMB = 10;
+            this.MemoriaTotal = 256;
+            this.VelocidadDescargaMB = 10;
         }
         //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
             short velocidadDescargaMB) : this(precio, nombre, marca, tipoOrigen, aceptaDiscosFisicos)
         {
-            this.velocidadDescargaMB = velocidadDescargaMB;
+            this.VelocidadDescargaMB = velocidadDescargaMB;
         }
         //Sobrecarga de uno menos ↑
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
             short velocidadDescargaMB, double memoriaTotal) : this(precio, nombre, marca, tipoOrigen, 
                 aceptaDiscosFisicos, velocidadDescargaMB)
         {
-            this.memoriaTotal = memoriaTotal;
+            this.MemoriaTotal = memoriaTotal;
         }
         //Sobrecarga de todos los atributos ↑
 
@@ -140,27 +158,13 @@ namespace Electronicos
         }
 
         //Metodos "normales" y sobrecarga
-        public int AgregarMemoria() //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms) (Agregado rapido!)
+        public void AgregarMemoria()
         {
-            int retorno = 0;
-            this.memoriaTotal += 50;
-            if (this.memoriaTotal > 500)
-            {
-                this.memoriaTotal = 500;
-                retorno = 1;
-            }
-            return retorno;
+            this.MemoriaTotal += 50;
         }
-        public int AgregarMemoria(int num) //Si retorna 1 muestra mensaje, sino retorna 0 y no muestra nada (validar en el Forms)
+        public void AgregarMemoria(int num)
         {
-            int retorno = 0;
             this.memoriaTotal += num;
-            if (this.memoriaTotal > 100)
-            {
-                this.memoriaTotal = 100;
-                retorno = 1;
-            }
-            return retorno;
         }
     }
 }

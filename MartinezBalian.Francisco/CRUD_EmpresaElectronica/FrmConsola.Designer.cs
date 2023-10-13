@@ -67,7 +67,7 @@
             // 
             txtBoxMemoriaTotal.Location = new Point(65, 240);
             txtBoxMemoriaTotal.Name = "txtBoxMemoriaTotal";
-            txtBoxMemoriaTotal.PlaceholderText = "Ingrese la memoria total";
+            txtBoxMemoriaTotal.PlaceholderText = "Ingrese la memoria total (maximo 2048)";
             txtBoxMemoriaTotal.Size = new Size(328, 27);
             txtBoxMemoriaTotal.TabIndex = 13;
             // 
@@ -75,7 +75,7 @@
             // 
             txtBoxVelocidadDescarga.Location = new Point(65, 306);
             txtBoxVelocidadDescarga.Name = "txtBoxVelocidadDescarga";
-            txtBoxVelocidadDescarga.PlaceholderText = "Ingrese la velocidad de descarga en MB";
+            txtBoxVelocidadDescarga.PlaceholderText = "Ingrese velocidad de descarga (maximo 500)";
             txtBoxVelocidadDescarga.Size = new Size(328, 27);
             txtBoxVelocidadDescarga.TabIndex = 14;
             // 

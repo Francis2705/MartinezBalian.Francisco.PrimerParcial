@@ -46,9 +46,10 @@ namespace CRUD_EmpresaElectronica
         }
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != string.Empty && int.TryParse(txtPrecio.Text, out precio) && txtMarca.Text != string.Empty &&
-                int.TryParse(txtBateria.Text, out bateria) && int.TryParse(txtCantidadContactos.Text, out cantidadContactos) &&
-                cmBoxAsistenteVirtual.Text != string.Empty && cmBoxOrigen.Text != string.Empty)
+            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) && 
+                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBateria.Text, out bateria) && 
+                int.TryParse(txtCantidadContactos.Text, out cantidadContactos) && cmBoxAsistenteVirtual.Text != string.Empty && 
+                cmBoxOrigen.Text != string.Empty)
             {
                 if (cmBoxAsistenteVirtual.Text == "SI")
                 {
