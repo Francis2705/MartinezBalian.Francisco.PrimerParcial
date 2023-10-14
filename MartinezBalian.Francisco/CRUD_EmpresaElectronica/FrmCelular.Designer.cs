@@ -91,6 +91,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.HighlightText;
+            BackgroundImage = Properties.Resources.fondo_celulares;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(459, 656);
             Controls.Add(cmBoxAsistenteVirtual);
             Controls.Add(txtBateria);
@@ -98,8 +101,9 @@
             Controls.Add(lblAsistenteVirtual);
             Controls.Add(lblCantidadDeContactos);
             Controls.Add(lblBateria);
+            DoubleBuffered = true;
             Name = "FrmCelular";
-            Text = "FrmAgregarCelular";
+            Text = "Celular";
             Controls.SetChildIndex(cmBoxOrigen, 0);
             Controls.SetChildIndex(txtPrecio, 0);
             Controls.SetChildIndex(txtNombre, 0);

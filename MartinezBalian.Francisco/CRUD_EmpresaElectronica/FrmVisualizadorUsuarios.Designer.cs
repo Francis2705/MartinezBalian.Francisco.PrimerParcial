@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmVisualizadorUsuarios));
             richTxtBoxInfoLogueos = new RichTextBox();
             SuspendLayout();
             // 
             // richTxtBoxInfoLogueos
             // 
-            richTxtBoxInfoLogueos.Location = new Point(101, 73);
+            richTxtBoxInfoLogueos.BackColor = Color.FromArgb(179, 227, 240);
+            richTxtBoxInfoLogueos.BorderStyle = BorderStyle.None;
+            richTxtBoxInfoLogueos.Font = new Font("Georgia", 10.2F, FontStyle.Regular, GraphicsUnit.Point);
+            richTxtBoxInfoLogueos.Location = new Point(154, 68);
             richTxtBoxInfoLogueos.Name = "richTxtBoxInfoLogueos";
             richTxtBoxInfoLogueos.Size = new Size(616, 438);
             richTxtBoxInfoLogueos.TabIndex = 0;
@@ -43,11 +47,13 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(961, 584);
             Controls.Add(richTxtBoxInfoLogueos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmVisualizadorUsuarios";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FrmVisualizadorUsuarios";
+            Text = "Visualizador usuarios";
             Load += FrmVisualizadorUsuarios_Load;
             ResumeLayout(false);
         }

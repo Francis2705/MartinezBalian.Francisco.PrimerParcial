@@ -23,6 +23,9 @@ namespace CRUD_EmpresaElectronica
         private bool error;
         private int cantidad;
 
+        /// <summary>
+        /// Inicializa los componentes del formulario y setea el posible error en falso
+        /// </summary>
         public FrmPrincipalEmpresa()
         {
             InitializeComponent();
@@ -153,7 +156,7 @@ namespace CRUD_EmpresaElectronica
         {
             if (this.lstBoxObjetos.SelectedIndex == -1)
             {
-                MessageBox.Show("Debe seleccionar un producto para ver sus caracteristicas especificas", "Error", 
+                MessageBox.Show("Debe seleccionar un producto para ver sus caracteristicas especificas", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else

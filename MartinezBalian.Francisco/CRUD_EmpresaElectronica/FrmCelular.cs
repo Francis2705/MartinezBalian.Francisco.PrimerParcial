@@ -23,6 +23,9 @@ namespace CRUD_EmpresaElectronica
         int cantidadContactos;
         bool asistente = false;
         ETipoOrigen tipoOrigen;
+        /// <summary>
+        /// Inicializa los componentes del formulario y setea el comboBox del asistente virtual
+        /// </summary>
         public FrmCelular()
         {
             InitializeComponent();
@@ -30,6 +33,9 @@ namespace CRUD_EmpresaElectronica
             cmBoxAsistenteVirtual.Items.Add("NO");
             cmBoxAsistenteVirtual.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        /// <summary>
+        /// Llama al constructor anterior y a parte setea los campos con los datos del celular recibido
+        /// </summary>
         public FrmCelular(Celular celu) : this()
         {
             txtNombre.Text = celu.Nombre;
@@ -54,9 +60,9 @@ namespace CRUD_EmpresaElectronica
         /// <param name="e">Representa un objeto de tipo EventArgs</param>
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) && 
-                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBateria.Text, out bateria) && 
-                int.TryParse(txtCantidadContactos.Text, out cantidadContactos) && cmBoxAsistenteVirtual.Text != string.Empty && 
+            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) &&
+                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBateria.Text, out bateria) &&
+                int.TryParse(txtCantidadContactos.Text, out cantidadContactos) && cmBoxAsistenteVirtual.Text != string.Empty &&
                 cmBoxOrigen.Text != string.Empty)
             {
                 if (cmBoxAsistenteVirtual.Text == "SI")

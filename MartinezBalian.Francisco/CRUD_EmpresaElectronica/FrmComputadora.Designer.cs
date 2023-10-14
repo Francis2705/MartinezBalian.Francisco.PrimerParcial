@@ -91,6 +91,9 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = SystemColors.HighlightText;
+            BackgroundImage = Properties.Resources.fondo_computadoras;
+            BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(468, 660);
             Controls.Add(cbBoxTactil);
             Controls.Add(txtBoxSDD);
@@ -99,7 +102,7 @@
             Controls.Add(lblSDD);
             Controls.Add(lblCantidadNucleos);
             Name = "FrmComputadora";
-            Text = "FrmComputadora";
+            Text = "Computadora";
             Controls.SetChildIndex(cmBoxOrigen, 0);
             Controls.SetChildIndex(txtPrecio, 0);
             Controls.SetChildIndex(txtNombre, 0);

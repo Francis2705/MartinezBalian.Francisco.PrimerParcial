@@ -22,6 +22,9 @@ namespace CRUD_EmpresaElectronica
         short velocidadDescargaMB;
         bool aceptaDiscosFisicos = false;
         ETipoOrigen tipoOrigen;
+        /// <summary>
+        /// Inicializa los componentes del formulario y setea el comboBox de si acepta discos fisicos o no
+        /// </summary>
         public FrmConsola()
         {
             InitializeComponent();
@@ -29,6 +32,9 @@ namespace CRUD_EmpresaElectronica
             cmBoxAceptaDiscosFisicos.Items.Add("NO");
             cmBoxAceptaDiscosFisicos.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        /// <summary>
+        /// Llama al constructor anterior y a parte setea los campos con los datos de la consola recibida
+        /// </summary>
         public FrmConsola(Consola consola) : this()
         {
             txtNombre.Text = consola.Nombre;
@@ -53,8 +59,8 @@ namespace CRUD_EmpresaElectronica
         /// <param name="e">Representa un objeto de tipo EventArgs</param>
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) && 
-                !string.IsNullOrWhiteSpace(txtMarca.Text) && double.TryParse(txtBoxMemoriaTotal.Text, out memoriaTotal) && 
+            if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) &&
+                !string.IsNullOrWhiteSpace(txtMarca.Text) && double.TryParse(txtBoxMemoriaTotal.Text, out memoriaTotal) &&
                 short.TryParse(txtBoxVelocidadDescarga.Text, out velocidadDescargaMB) && cmBoxAceptaDiscosFisicos.Text != string.Empty &&
                 cmBoxOrigen.Text != string.Empty)
             {

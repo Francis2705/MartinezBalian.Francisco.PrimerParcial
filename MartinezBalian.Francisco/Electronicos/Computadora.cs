@@ -69,11 +69,21 @@ namespace Electronicos
             }
         }
 
-        //Constructores
+        /// <summary>
+        /// Constructor declarado para la serializacion
+        /// </summary>
         public Computadora()
         {
 
         }
+        /// <summary>
+        /// Crea una computadora a partir de algunos datos y llama al constructor de la clase base
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="esTactil">Recibe si es tactil o no</param>
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil)
             : base(precio, nombre, marca, tipoOrigen)
         {
@@ -81,20 +91,36 @@ namespace Electronicos
             this.cantidadNucleos = 2;
             this.espacioDiscoSSD = 128;
         }
-        //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
+        /// <summary>
+        /// Crea una computadora a partir de algunos datos y llama al constructor que setea si es tactil o no
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="esTactil">Recibe si es tactil o no</param>
+        /// <param name="espacioDiscoSSD">Recibe el espacio del disco SSD</param>
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
             double espacioDiscoSSD) : this(precio, nombre, marca, tipoOrigen, esTactil)
         {
             this.EspacioDiscoSSD = espacioDiscoSSD;
         }
-        //Sobrecarga de uno menos ↑
+        /// <summary>
+        /// Crea una computadora a partir de algunos datos y llama al constructor que setea si es tactil o no y el espacio del disco SSD
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="esTactil">Recibe si es tactil o no</param>
+        /// <param name="espacioDiscoSSD">Recibe el espacio del disco SSD</param>
+        /// <param name="cantidadNucleos">Recibe la cantidad de nucleos</param>
         public Computadora(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool esTactil,
             double espacioDiscoSSD, int cantidadNucleos) : this(precio, nombre, marca, tipoOrigen,
                 esTactil, espacioDiscoSSD)
         {
             this.CantidadNucleos = cantidadNucleos;
         }
-        //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
         public override string MostrarDatosGenerales()

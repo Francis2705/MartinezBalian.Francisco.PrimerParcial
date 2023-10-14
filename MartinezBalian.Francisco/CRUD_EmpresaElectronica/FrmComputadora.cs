@@ -22,6 +22,9 @@ namespace CRUD_EmpresaElectronica
         double espacioDiscoSDD;
         bool tactil = false;
         ETipoOrigen tipoOrigen;
+        /// <summary>
+        /// Inicializa los componentes del formulario y setea el comboBox de si es tactil o no
+        /// </summary>
         public FrmComputadora()
         {
             InitializeComponent();
@@ -29,6 +32,9 @@ namespace CRUD_EmpresaElectronica
             cbBoxTactil.Items.Add("NO");
             cbBoxTactil.DropDownStyle = ComboBoxStyle.DropDownList;
         }
+        /// <summary>
+        /// Llama al constructor anterior y a parte setea los campos con los datos de la computadora recibida
+        /// </summary>
         public FrmComputadora(Computadora computadora) : this()
         {
             txtNombre.Text = computadora.Nombre;
@@ -54,8 +60,8 @@ namespace CRUD_EmpresaElectronica
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) &&
-                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBoxCantidadNucleos.Text, out cantidadNucleos) && 
-                double.TryParse(txtBoxSDD.Text, out espacioDiscoSDD) && cbBoxTactil.Text != string.Empty && 
+                !string.IsNullOrWhiteSpace(txtMarca.Text) && int.TryParse(txtBoxCantidadNucleos.Text, out cantidadNucleos) &&
+                double.TryParse(txtBoxSDD.Text, out espacioDiscoSDD) && cbBoxTactil.Text != string.Empty &&
                 cmBoxOrigen.Text != string.Empty)
             {
                 if (cbBoxTactil.Text == "SI")

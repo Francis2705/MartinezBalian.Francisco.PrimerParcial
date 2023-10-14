@@ -16,6 +16,9 @@ namespace CRUD_EmpresaElectronica
     /// </summary>
     public partial class FrmVisualizadorUsuarios : Form
     {
+        /// <summary>
+        /// Inicializa los componentes del formulario
+        /// </summary>
         public FrmVisualizadorUsuarios()
         {
             InitializeComponent();

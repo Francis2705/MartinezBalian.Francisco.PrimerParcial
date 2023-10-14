@@ -70,11 +70,21 @@ namespace Electronicos
             }
         }
 
-        //Constructores
+        /// <summary>
+        /// Constructor declarado para la serializacion
+        /// </summary>
         public Celular()
         {
 
         }
+        /// <summary>
+        /// Crea un celular a partir de algunos datos y llama al constructor de la clase base
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="bateria">Recibe la bateria</param>
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria)
             : base(precio, nombre, marca, tipoOrigen)
         {
@@ -82,13 +92,30 @@ namespace Electronicos
             this.asistenteVirtual = false;
             this.cantidadContactos = 0;
         }
-        //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
+        /// <summary>
+        /// Crea un celular a partir de algunos datos y llama al constructor que setea la bateria y otros datos
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="bateria">Recibe la bateria</param>
+        /// <param name="cantidadContactos">Recibe la cantidad de contactos</param>
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
             int cantidadContactos) : this(precio, nombre, marca, tipoOrigen, bateria)
         {
             this.CantidadContactos = cantidadContactos;
         }
-        //Sobrecarga de uno menos ↑
+        /// <summary>
+        /// Crea un celular a partir de algunos datos y llama al constructor que setea la bateria, cantidad de contactos y otros datos
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="bateria">Recibe la bateria</param>
+        /// <param name="cantidadContactos">Recibe la cantidad de contactos</param>
+        /// <param name="asistenteVirtual">Recibe si tiene o no asistente virtual</param>
         public Celular(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, int bateria,
             int cantidadContactos, bool asistenteVirtual):this(precio, nombre, marca, tipoOrigen, bateria, cantidadContactos)
         {

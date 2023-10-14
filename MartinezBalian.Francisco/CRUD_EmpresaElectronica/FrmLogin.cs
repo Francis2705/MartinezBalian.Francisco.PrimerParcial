@@ -11,7 +11,9 @@ namespace CRUD_EmpresaElectronica
     {
         private List<UsuarioElectronico> listaUsuarios = new List<UsuarioElectronico>();
         static UsuarioElectronico usuarioLogueado = null;
-
+        /// <summary>
+        /// Inicializa los componentes del formulario
+        /// </summary>
         public FrmLogin()
         {
             InitializeComponent();

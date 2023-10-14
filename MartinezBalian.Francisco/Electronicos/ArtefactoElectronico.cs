@@ -70,11 +70,20 @@ namespace Electronicos
             }
         }
 
-        //Constructor
+        /// <summary>
+        /// Constructor declarado para la serializacion
+        /// </summary>
         public ArtefactoElectronico()
         {
 
         }
+        /// <summary>
+        /// Constructor que crea un nuevo artefacto electronico
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
         public ArtefactoElectronico(double precio, string nombre, string marca, ETipoOrigen tipoOrigen)
         {
             this.Precio = precio;

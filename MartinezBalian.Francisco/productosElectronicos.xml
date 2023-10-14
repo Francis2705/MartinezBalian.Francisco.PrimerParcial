@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ArtefactoElectronico xsi:type="Consola">
-    <Precio>23243242</Precio>
-    <Nombre>ferg</Nombre>
-    <Marca>rge</Marca>
-    <TipoOrigen>KOREANO</TipoOrigen>
-    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
-    <MemoriaTotal>65</MemoriaTotal>
-    <VelocidadDescargaMB>500</VelocidadDescargaMB>
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>1</Precio>
+    <Nombre>bgfhfg</Nombre>
+    <Marca>gkg</Marca>
+    <TipoOrigen>CHINO</TipoOrigen>
+    <EsTactil>true</EsTactil>
+    <CantidadNucleos>1</CantidadNucleos>
+    <EspacioDiscoSSD>32</EspacioDiscoSSD>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Consola">
     <Precio>34</Precio>
@@ -18,15 +18,6 @@
     <MemoriaTotal>65</MemoriaTotal>
     <VelocidadDescargaMB>75</VelocidadDescargaMB>
   </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Computadora">
-    <Precio>1</Precio>
-    <Nombre>bgfhfg</Nombre>
-    <Marca>gkg</Marca>
-    <TipoOrigen>CHINO</TipoOrigen>
-    <EsTactil>true</EsTactil>
-    <CantidadNucleos>1</CantidadNucleos>
-    <EspacioDiscoSSD>32</EspacioDiscoSSD>
-  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Celular">
     <Precio>54</Precio>
     <Nombre>yhth</Nombre>
@@ -36,13 +27,22 @@
     <Bateria>67</Bateria>
     <CantidadContactos>67</CantidadContactos>
   </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Consola">
+    <Precio>23243242</Precio>
+    <Nombre>ferg</Nombre>
+    <Marca>rge</Marca>
+    <TipoOrigen>KOREANO</TipoOrigen>
+    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
+    <MemoriaTotal>65</MemoriaTotal>
+    <VelocidadDescargaMB>500</VelocidadDescargaMB>
+  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Celular">
-    <Precio>34</Precio>
-    <Nombre>jfjfgj</Nombre>
-    <Marca>grgrt</Marca>
+    <Precio>54</Precio>
+    <Nombre>ege</Nombre>
+    <Marca>jytj</Marca>
     <TipoOrigen>AMERICANO</TipoOrigen>
     <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>23</Bateria>
-    <CantidadContactos>6</CantidadContactos>
+    <Bateria>55</Bateria>
+    <CantidadContactos>2</CantidadContactos>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>

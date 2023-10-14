@@ -52,6 +52,7 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
+            lblNombre.BackColor = Color.White;
             lblNombre.Location = new Point(65, 19);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);
@@ -103,6 +104,7 @@
             // 
             // txtNombre
             // 
+            txtNombre.ForeColor = SystemColors.ControlText;
             txtNombre.Location = new Point(65, 42);
             txtNombre.Name = "txtNombre";
             txtNombre.PlaceholderText = "Ingrese el nombre";
@@ -132,6 +134,7 @@
             Controls.Add(lblNombre);
             Controls.Add(btnConfirmar);
             Name = "FrmAgregar";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmAgregar";
             ResumeLayout(false);
             PerformLayout();

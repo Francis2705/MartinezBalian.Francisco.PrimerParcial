@@ -30,7 +30,6 @@ namespace CRUD_EmpresaElectronica
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             txtBoxCorreo = new TextBox();
             txtBoxClave = new TextBox();
             btnIngresar = new Button();
@@ -98,7 +97,7 @@ namespace CRUD_EmpresaElectronica
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ButtonHighlight;
-            BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
+            BackgroundImage = Properties.Resources.fondo_login;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(572, 499);
             Controls.Add(lblInicioSesion);
@@ -108,7 +107,7 @@ namespace CRUD_EmpresaElectronica
             Controls.Add(txtBoxCorreo);
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Form1";
+            Text = "Inicio de sesion";
             Load += FrmLogin_Load;
             ResumeLayout(false);
             PerformLayout();

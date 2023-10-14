@@ -91,7 +91,10 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(448, 656);
+            BackColor = SystemColors.HighlightText;
+            BackgroundImage = Properties.Resources.fondo_consola;
+            BackgroundImageLayout = ImageLayout.Stretch;
+            ClientSize = new Size(452, 656);
             Controls.Add(cmBoxAceptaDiscosFisicos);
             Controls.Add(txtBoxVelocidadDescarga);
             Controls.Add(txtBoxMemoriaTotal);
@@ -99,7 +102,7 @@
             Controls.Add(lblVelocidadDescarga);
             Controls.Add(lblMemoriaTotal);
             Name = "FrmConsola";
-            Text = "FrmConsola";
+            Text = "Consola";
             Controls.SetChildIndex(cmBoxOrigen, 0);
             Controls.SetChildIndex(txtPrecio, 0);
             Controls.SetChildIndex(txtNombre, 0);

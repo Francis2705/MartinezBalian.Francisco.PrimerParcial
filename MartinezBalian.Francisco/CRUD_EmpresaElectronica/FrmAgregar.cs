@@ -17,6 +17,9 @@ namespace CRUD_EmpresaElectronica
     /// </summary>
     public partial class FrmAgregar : Form
     {
+        /// <summary>
+        /// Inicializa los componentes del formulario y setea el comboBox del origen del producto
+        /// </summary>
         public FrmAgregar()
         {
             InitializeComponent();

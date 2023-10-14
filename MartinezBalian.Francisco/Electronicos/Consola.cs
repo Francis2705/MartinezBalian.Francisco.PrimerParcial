@@ -69,11 +69,21 @@ namespace Electronicos
             }
         }
 
-        //Constructores
+        /// <summary>
+        /// Constructor declarado para la serializacion
+        /// </summary>
         public Consola()
         {
 
         }
+        /// <summary>
+        /// Crea una consola a partir de algunos datos y llama al constructor de la clase base
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="aceptaDiscosFisicos">Recibe si acepta discos fisicos o no</param>
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos)
             : base(precio, nombre, marca, tipoOrigen)
         {
@@ -81,20 +91,38 @@ namespace Electronicos
             this.MemoriaTotal = 256;
             this.VelocidadDescargaMB = 10;
         }
-        //Sobrecarga (que no es sobrecarga en realidad) a eleccion ↑
+        /// <summary>
+        /// Crea una consola a partir de algunos datos y llama al constructor que setea si acepta o no discos fisicos
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="aceptaDiscosFisicos">Recibe si acepta discos fisicos o no</param>
+        /// <param name="velocidadDescargaMB">Recibe la velocidad de descarga</param>
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
             short velocidadDescargaMB) : this(precio, nombre, marca, tipoOrigen, aceptaDiscosFisicos)
         {
             this.VelocidadDescargaMB = velocidadDescargaMB;
         }
-        //Sobrecarga de uno menos ↑
+        /// <summary>
+        /// Crea una consola a partir de algunos datos y llama al constructor que setea si acepta o no discos fisicos y la velocidad de
+        /// descarga
+        /// </summary>
+        /// <param name="precio">Recibe el precio</param>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="marca">Recibe la marca</param>
+        /// <param name="tipoOrigen">Recibe el origen</param>
+        /// <param name="aceptaDiscosFisicos">Recibe si acepta discos fisicos o no</param>
+        /// <param name="velocidadDescargaMB">Recibe la velocidad de descarga</param>
+        /// <param name="velocidadDescargaMB">Recibe la velocidad de descarga</param>
+        /// <param name="memoriaTotal">Recibe la memoria total</param>
         public Consola(double precio, string nombre, string marca, ETipoOrigen tipoOrigen, bool aceptaDiscosFisicos,
             short velocidadDescargaMB, double memoriaTotal) : this(precio, nombre, marca, tipoOrigen, 
                 aceptaDiscosFisicos, velocidadDescargaMB)
         {
             this.MemoriaTotal = memoriaTotal;
         }
-        //Sobrecarga de todos los atributos ↑
 
         //Sobrescritura de metodos virtual e implementacion del abstract
         public override string MostrarDatosGenerales()

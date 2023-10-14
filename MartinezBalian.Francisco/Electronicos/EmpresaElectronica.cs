@@ -32,7 +32,11 @@ namespace Electronicos
             set { productosElectronicos = value;}
         }
 
-        //Constructor
+        /// <summary>
+        /// Crea una nueva empresa
+        /// </summary>
+        /// <param name="nombre">Recibe el nombre</param>
+        /// <param name="creador">Recibe el nombre del creador</param>
         public EmpresaElectronica(string nombre, string creador)
         {
             this.productosElectronicos = new List<ArtefactoElectronico>();
