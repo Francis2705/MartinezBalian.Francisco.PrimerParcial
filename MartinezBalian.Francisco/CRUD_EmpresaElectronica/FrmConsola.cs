@@ -11,6 +11,9 @@ using System.Windows.Forms;
 
 namespace CRUD_EmpresaElectronica
 {
+    /// <summary>
+    /// Representa un formulario para agregar una consola
+    /// </summary>
     public partial class FrmConsola : FrmAgregar
     {
         public Consola consola;
@@ -43,6 +46,11 @@ namespace CRUD_EmpresaElectronica
                 cmBoxAceptaDiscosFisicos.Text = "NO";
             }
         }
+        /// <summary>
+        /// Si se pasa una serie de validaciones, se agrega una consola, sino se muestra un MessageBox.Show informando que no se pudo
+        /// </summary>
+        /// <param name="sender">Representa un objeto de cualquier tipo</param>
+        /// <param name="e">Representa un objeto de tipo EventArgs</param>
         protected override void btnConfirmar_Click(object sender, EventArgs e)
         {
             if (!string.IsNullOrWhiteSpace(txtNombre.Text) && int.TryParse(txtPrecio.Text, out precio) && 
@@ -79,7 +87,7 @@ namespace CRUD_EmpresaElectronica
             }
             else
             {
-                MessageBox.Show("Campos invalidos o incompletos");
+                MessageBox.Show("Campos invalidos o incompletos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

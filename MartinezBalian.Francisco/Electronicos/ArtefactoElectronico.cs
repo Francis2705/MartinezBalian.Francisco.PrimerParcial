@@ -4,6 +4,9 @@ using System.Xml.Serialization;
 
 namespace Electronicos
 {
+    /// <summary>
+    /// Clase que representa un artefacto electronico (un celular, una computadora o una consola)
+    /// </summary>
     [XmlInclude(typeof(Celular))]
     [XmlInclude(typeof(Consola))]
     [XmlInclude(typeof(Computadora))]
@@ -94,7 +97,12 @@ namespace Electronicos
         }
         public abstract string MostrarCaracteristicasEspecificas();
 
-        //Sobrecarga del operador ==
+        /// <summary>
+        /// Sobrecarga del operador ==, compara por igualdad de nonmbre y precio
+        /// </summary>
+        /// <param name="art1">Representa un artefacto electronico</param>
+        /// <param name="art2">Representa otro artefacto electronico</param>
+        /// <returns>Retorna true si son iguales y false sino lo son</returns>
         public static bool operator ==(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
             return (art1.precio == art2.precio) && (art1.nombre == art2.nombre);
@@ -104,7 +112,11 @@ namespace Electronicos
             return !(art1 == art2);
         }
 
-        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        /// <summary>
+        /// Sobrescritura del Equals()
+        /// </summary>
+        /// <param name="obj">Objeto de cualquier tipo</param>
+        /// <returns>Retorna true si es de tipo Artefacto electronico y si son iguales (relacion con el ==)</returns>
         public override bool Equals(object? obj)
         {
             bool retorno = false;
@@ -114,10 +126,18 @@ namespace Electronicos
             }
             return retorno;
         }
+        /// <summary>
+        /// Sobrescritura del ToString()
+        /// </summary>
+        /// <returns>Retorna un string con lo que devuelve el metodo MostrarDatosGenerales</returns>
         public override string ToString()
         {
             return this.MostrarDatosGenerales();
         }
+        /// <summary>
+        /// Sobrescritura del GetHashCode()
+        /// </summary>
+        /// <returns>Retorna el precio del artefacto</returns>
         public override int GetHashCode()
         {
             return (int)this.Precio;

@@ -7,6 +7,9 @@ using System.Threading.Tasks;
 
 namespace Electronicos
 {
+    /// <summary>
+    /// Representa una emmpresa electronica que contendria artefactos electronicos
+    /// </summary>
     public sealed class EmpresaElectronica
     {
         //Atributos
@@ -28,14 +31,6 @@ namespace Electronicos
             get { return productosElectronicos; }
             set { productosElectronicos = value;}
         }
-        /*public ArtefactoElectronico this[int i] //El num que se pasa (i) ya viene validado de afuera 
-        {
-            get
-            {
-                return this.productosElectronicos[i];
-            }
-        }*/
-
 
         //Constructor
         public EmpresaElectronica(string nombre, string creador)
@@ -62,15 +57,27 @@ namespace Electronicos
             return !(e == a);
         }
 
-        //Equals, GetHashCode y ToString
+        /// <summary>
+        /// Sobrescritura del Equals()
+        /// </summary>
+        /// <param name="obj">Objeto de cualquier tipo</param>
+        /// <returns>Retorna true si el objeto esta en la empresa (relacion con el ==)</returns>
         public override bool Equals(object? obj)
         {
             return this == (ArtefactoElectronico)obj;
         }
+        /// <summary>
+        /// Sobrescritura del GetHashCode()
+        /// </summary>
+        /// <returns>Retorna la cantidad de productos que hay en la empresa</returns>
         public override int GetHashCode()
         {
             return productosElectronicos.Count;
         }
+        /// <summary>
+        /// Sobrescritura del ToString()
+        /// </summary>
+        /// <returns>Retorna un string con el nombre y el creador de la empres</returns>
         public override string ToString()
         {
             return $"Nombre: {nombre} - Creador: {creador}";
@@ -126,26 +133,6 @@ namespace Electronicos
         public static int OrdenarArtefactosPorPrecioAscendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
             return art1.Precio.CompareTo(art2.Precio);
-            /*if (ascendente)
-            {
-                return art1.Precio.CompareTo(art2.Precio);
-            }
-            else
-            {
-                return art2.Precio.CompareTo(art1.Precio);
-            }*/
-            /*if (art1.Precio.CompareTo(art2.Precio) < 0)
-            {
-                Console.WriteLine("el valor de art1.Precio es menor al de art2.Precio");
-            }
-            else if (art1.Precio.CompareTo(art2.Precio) == 0)
-            {
-                Console.WriteLine("son iguales");
-            }
-            else
-            {
-                Console.WriteLine("el valor de art1.Precio es mayor al de art2.Precio");
-            }*/
         }
         public static int OrdenarArtefactosPorPrecioDescendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {

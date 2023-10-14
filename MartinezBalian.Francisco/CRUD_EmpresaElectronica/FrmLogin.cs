@@ -4,6 +4,9 @@ using System.Text.Json;
 
 namespace CRUD_EmpresaElectronica
 {
+    /// <summary>
+    /// Representa un formulario para que un usuario se loguee para acceder a la empresa
+    /// </summary>
     public partial class FrmLogin : Form
     {
         private List<UsuarioElectronico> listaUsuarios = new List<UsuarioElectronico>();
@@ -13,8 +16,12 @@ namespace CRUD_EmpresaElectronica
         {
             InitializeComponent();
         }
-
-        private void FrmLogin_Load(object sender, EventArgs e) //Aca oculto el de rellenar automaticamente
+        /// <summary>
+        /// Deserializa el archivo de los usuarios
+        /// </summary>
+        /// <param name="sender">Representa un objeto de cualquier tipo</param>
+        /// <param name="e">Representa un objeto de tipo EventArgs</param>
+        private void FrmLogin_Load(object sender, EventArgs e)
         {
 
             if (File.Exists(@"../../../../MOCK_DATA.json"))
@@ -32,7 +39,11 @@ namespace CRUD_EmpresaElectronica
                 Application.Exit();
             }
         }
-
+        /// <summary>
+        /// Si el usuario y la clave son correctos, accede a la empresa, sino no lo deja entrar
+        /// </summary>
+        /// <param name="sender">Representa un objeto de cualquier tipo</param>
+        /// <param name="e">Representa un objeto de tipo EventArgs</param>
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             bool usuarioValido = false;
@@ -76,10 +87,14 @@ namespace CRUD_EmpresaElectronica
             }
             else
             {
-                MessageBox.Show("Nombre de usuario o clave incorrectos.");
+                MessageBox.Show("Nombre de usuario o clave incorrectos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
+        /// <summary>
+        /// Rellena automaticamente los campos de usuario y clave
+        /// </summary>
+        /// <param name="sender">Representa un objeto de cualquier tipo</param>
+        /// <param name="e">Representa un objeto de tipo EventArgs</param>
         private void btnRellenar_Click(object sender, EventArgs e)
         {
             Random random = new Random();
@@ -87,7 +102,10 @@ namespace CRUD_EmpresaElectronica
             txtBoxCorreo.Text = listaUsuarios[i].correo;
             txtBoxClave.Text = listaUsuarios[i].clave;
         }
-
+        /// <summary>
+        /// Metodo que retorna el usuario logueado
+        /// </summary>
+        /// <returns>Retorna el usuario logueado</returns>
         public static UsuarioElectronico GetUsuarioElectronico()
         {
             return FrmLogin.usuarioLogueado;

@@ -12,6 +12,9 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace CRUD_EmpresaElectronica
 {
+    /// <summary>
+    /// Clase base FrmAgregar que representa un formulario base para agregar un producto
+    /// </summary>
     public partial class FrmAgregar : Form
     {
         public FrmAgregar()

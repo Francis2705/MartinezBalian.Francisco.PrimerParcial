@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace Electronicos
 {
+    /// <summary>
+    /// Clase que representa una computadora
+    /// </summary>
     public sealed class Computadora : ArtefactoElectronico
     {
         //Atributos
@@ -127,7 +130,12 @@ namespace Electronicos
             return nombreCompu.nombre;
         }
 
-        //Sobrecarga del operador ==
+        /// <summary>
+        /// Sobrecarga del operador ==, compara por igualdad de nonmbre, precio y cantidad de nucleos
+        /// </summary>
+        /// <param name="art1">Representa una computadora</param>
+        /// <param name="art2">Representa otra computadora</param>
+        /// <returns>Retorna true si son iguales y false sino lo son</returns>
         public static bool operator ==(Computadora compu1, Computadora compu2) //Va al Equals() base
         {
             return ((ArtefactoElectronico)compu1).Equals(compu2) && compu1.cantidadNucleos == compu2.cantidadNucleos;
@@ -138,7 +146,11 @@ namespace Electronicos
             return !(compu1 == compu2);
         }
 
-        //Sobrescritura del Equals(), ToString() y el GetHashCode()
+        /// <summary>
+        /// Sobrescritura del Equals()
+        /// </summary>
+        /// <param name="obj">Objeto de cualquier tipo</param>
+        /// <returns>Retorna true si es de tipo computadora</returns>
         public override bool Equals(object? obj)
         {
             bool retorno = false;
@@ -148,10 +160,18 @@ namespace Electronicos
             }
             return retorno;
         }
+        /// <summary>
+        /// Sobrescritura del ToString()
+        /// </summary>
+        /// <returns>Retorna un string con lo que devuelve el metodo MostrarDatosGenerales</returns>
         public override string ToString()
         {
             return this.MostrarDatosGenerales();
         }
+        /// <summary>
+        /// Sobrescritura del GetHashCode()
+        /// </summary>
+        /// <returns>Llama al de la clase base</returns>
         public override int GetHashCode()
         {
             return base.GetHashCode();
