@@ -30,6 +30,7 @@ namespace CRUD_EmpresaElectronica
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmLogin));
             txtBoxCorreo = new TextBox();
             txtBoxClave = new TextBox();
             btnIngresar = new Button();
@@ -105,6 +106,7 @@ namespace CRUD_EmpresaElectronica
             Controls.Add(btnIngresar);
             Controls.Add(txtBoxClave);
             Controls.Add(txtBoxCorreo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Inicio de sesion";

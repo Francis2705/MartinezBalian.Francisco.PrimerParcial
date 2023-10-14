@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCelular));
             lblBateria = new Label();
             lblCantidadDeContactos = new Label();
             lblAsistenteVirtual = new Label();
@@ -102,6 +103,7 @@
             Controls.Add(lblCantidadDeContactos);
             Controls.Add(lblBateria);
             DoubleBuffered = true;
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmCelular";
             Text = "Celular";
             Controls.SetChildIndex(cmBoxOrigen, 0);

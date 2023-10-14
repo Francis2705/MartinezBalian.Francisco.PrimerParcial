@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPrincipalEmpresa));
             btnVisualizadorUsuariosLogueo = new Button();
             lblUsuarioInfo = new Label();
             btnAgregar = new Button();
@@ -229,6 +230,7 @@
             Controls.Add(btnAgregar);
             Controls.Add(lblUsuarioInfo);
             Controls.Add(btnVisualizadorUsuariosLogueo);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmPrincipalEmpresa";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Comcelcon";

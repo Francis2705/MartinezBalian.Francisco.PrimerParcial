@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmComputadora));
             lblCantidadNucleos = new Label();
             lblSDD = new Label();
             lblTactil = new Label();
@@ -101,6 +102,7 @@
             Controls.Add(lblTactil);
             Controls.Add(lblSDD);
             Controls.Add(lblCantidadNucleos);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmComputadora";
             Text = "Computadora";
             Controls.SetChildIndex(cmBoxOrigen, 0);

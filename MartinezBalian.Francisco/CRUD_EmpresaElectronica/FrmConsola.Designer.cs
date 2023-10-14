@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmConsola));
             lblMemoriaTotal = new Label();
             lblVelocidadDescarga = new Label();
             lblAceptaDiscosFisicos = new Label();
@@ -101,6 +102,7 @@
             Controls.Add(lblAceptaDiscosFisicos);
             Controls.Add(lblVelocidadDescarga);
             Controls.Add(lblMemoriaTotal);
+            Icon = (Icon)resources.GetObject("$this.Icon");
             Name = "FrmConsola";
             Text = "Consola";
             Controls.SetChildIndex(cmBoxOrigen, 0);

@@ -52,7 +52,8 @@
             // lblNombre
             // 
             lblNombre.AutoSize = true;
-            lblNombre.BackColor = Color.White;
+            lblNombre.BackColor = SystemColors.Control;
+            lblNombre.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             lblNombre.Location = new Point(65, 19);
             lblNombre.Name = "lblNombre";
             lblNombre.Size = new Size(64, 20);

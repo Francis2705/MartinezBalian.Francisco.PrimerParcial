@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ArtefactoElectronico xsi:type="Computadora">
-    <Precio>1</Precio>
-    <Nombre>bgfhfg</Nombre>
-    <Marca>gkg</Marca>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>54</Precio>
+    <Nombre>yhth</Nombre>
+    <Marca>yjy</Marca>
     <TipoOrigen>CHINO</TipoOrigen>
-    <EsTactil>true</EsTactil>
-    <CantidadNucleos>1</CantidadNucleos>
-    <EspacioDiscoSSD>32</EspacioDiscoSSD>
+    <AsistenteVirtual>false</AsistenteVirtual>
+    <Bateria>67</Bateria>
+    <CantidadContactos>67</CantidadContactos>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Consola">
     <Precio>34</Precio>
@@ -17,15 +17,6 @@
     <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
     <MemoriaTotal>65</MemoriaTotal>
     <VelocidadDescargaMB>75</VelocidadDescargaMB>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Celular">
-    <Precio>54</Precio>
-    <Nombre>yhth</Nombre>
-    <Marca>yjy</Marca>
-    <TipoOrigen>CHINO</TipoOrigen>
-    <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>67</Bateria>
-    <CantidadContactos>67</CantidadContactos>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Consola">
     <Precio>23243242</Precio>
@@ -44,5 +35,14 @@
     <AsistenteVirtual>false</AsistenteVirtual>
     <Bateria>55</Bateria>
     <CantidadContactos>2</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>1</Precio>
+    <Nombre>bgfhfg</Nombre>
+    <Marca>gkg</Marca>
+    <TipoOrigen>CHINO</TipoOrigen>
+    <EsTactil>true</EsTactil>
+    <CantidadNucleos>1</CantidadNucleos>
+    <EspacioDiscoSSD>32</EspacioDiscoSSD>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>
