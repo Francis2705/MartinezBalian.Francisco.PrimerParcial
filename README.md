@@ -1,6 +1,6 @@
 # Presentacion Primer Parcial Laboratorio 2
 ![VisualStudio](VisualStudio.png)
-Me llamo Francisco Martinez Balian, tengo 19 años y aspiro a ser un gran programador. Me emociona mucho la idea de poder ayudar a las personas con la tecnologia, ya sea con un programa, una aplicacion o con un robot para que ayude a las pesonas que tengan ciertas dificultades. Me anote en esta tecnicatura, porque siento que el unico limite es la imaginacion, lo que te imagines es posible si lo sabes programar.
+ Me llamo Francisco Martinez Balian, tengo 19 años y aspiro a ser un gran programador. Me emociona mucho la idea de poder ayudar a las personas con la tecnologia, ya sea con un programa, una aplicacion o con un robot para que ayude a las pesonas que tengan ciertas dificultades. Me anote en esta tecnicatura, porque siento que el unico limite es la imaginacion, lo que te imagines es posible si lo sabes programar.
 
 # Titulo: CRUD - Empresa electronica
 ![FrmEmpresa](FrmEmpresa.png)
