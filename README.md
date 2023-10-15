@@ -13,4 +13,4 @@ Este CRUD representa una aplicacion diseñada para una empresa de productos elec
 ![DiagramaClases](DiagramaClases.png)
 
 # Diagrama Esquemático de formularios
-![DiagramaFormularios](DiagramaFormularios.png)
+![DiagramaForms](DiagramaForms.png)
