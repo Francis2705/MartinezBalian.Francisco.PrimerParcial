@@ -1,48 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ArtefactoElectronico xsi:type="Celular">
-    <Precio>54</Precio>
-    <Nombre>yhth</Nombre>
-    <Marca>yjy</Marca>
-    <TipoOrigen>CHINO</TipoOrigen>
-    <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>67</Bateria>
-    <CantidadContactos>67</CantidadContactos>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Consola">
-    <Precio>34</Precio>
-    <Nombre>vdsv</Nombre>
-    <Marca>gt</Marca>
+    <Precio>500</Precio>
+    <Nombre>Iphone 11</Nombre>
+    <Marca>Apple</Marca>
     <TipoOrigen>AMERICANO</TipoOrigen>
-    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
-    <MemoriaTotal>65</MemoriaTotal>
-    <VelocidadDescargaMB>75</VelocidadDescargaMB>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Consola">
-    <Precio>23243242</Precio>
-    <Nombre>ferg</Nombre>
-    <Marca>rge</Marca>
-    <TipoOrigen>KOREANO</TipoOrigen>
-    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
-    <MemoriaTotal>65</MemoriaTotal>
-    <VelocidadDescargaMB>500</VelocidadDescargaMB>
+    <AsistenteVirtual>true</AsistenteVirtual>
+    <Bateria>35</Bateria>
+    <CantidadContactos>100</CantidadContactos>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Celular">
-    <Precio>54</Precio>
-    <Nombre>ege</Nombre>
-    <Marca>jytj</Marca>
-    <TipoOrigen>AMERICANO</TipoOrigen>
+    <Precio>250</Precio>
+    <Nombre>Galaxy A70</Nombre>
+    <Marca>Samsung</Marca>
+    <TipoOrigen>KOREANO</TipoOrigen>
     <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>55</Bateria>
-    <CantidadContactos>2</CantidadContactos>
+    <Bateria>89</Bateria>
+    <CantidadContactos>50</CantidadContactos>
   </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Computadora">
-    <Precio>1</Precio>
-    <Nombre>bgfhfg</Nombre>
-    <Marca>gkg</Marca>
-    <TipoOrigen>CHINO</TipoOrigen>
+    <Precio>1100</Precio>
+    <Nombre>VivoBook 15</Nombre>
+    <Marca>ASUS</Marca>
+    <TipoOrigen>INTERNACIONAL</TipoOrigen>
     <EsTactil>true</EsTactil>
-    <CantidadNucleos>1</CantidadNucleos>
-    <EspacioDiscoSSD>32</EspacioDiscoSSD>
+    <CantidadNucleos>4</CantidadNucleos>
+    <EspacioDiscoSSD>256</EspacioDiscoSSD>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>7000</Precio>
+    <Nombre>Mac Book Pro</Nombre>
+    <Marca>Apple</Marca>
+    <TipoOrigen>AMERICANO</TipoOrigen>
+    <EsTactil>false</EsTactil>
+    <CantidadNucleos>8</CantidadNucleos>
+    <EspacioDiscoSSD>512</EspacioDiscoSSD>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Consola">
+    <Precio>1500</Precio>
+    <Nombre>Playstation 5</Nombre>
+    <Marca>Sony</Marca>
+    <TipoOrigen>JAPONES</TipoOrigen>
+    <AceptaDiscosFisicos>true</AceptaDiscosFisicos>
+    <MemoriaTotal>825</MemoriaTotal>
+    <VelocidadDescargaMB>200</VelocidadDescargaMB>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Consola">
+    <Precio>450</Precio>
+    <Nombre>Switch</Nombre>
+    <Marca>Nintendo</Marca>
+    <TipoOrigen>CHINO</TipoOrigen>
+    <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
+    <MemoriaTotal>500</MemoriaTotal>
+    <VelocidadDescargaMB>150</VelocidadDescargaMB>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>
