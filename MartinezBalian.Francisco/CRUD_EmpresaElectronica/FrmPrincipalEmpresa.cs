@@ -29,6 +29,7 @@ namespace CRUD_EmpresaElectronica
         public FrmPrincipalEmpresa()
         {
             InitializeComponent();
+            this.Text = this.empresaElectronica.Nombre;
             this.error = false;
         }
         /// <summary>

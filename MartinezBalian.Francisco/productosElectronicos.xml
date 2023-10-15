@@ -1,32 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfArtefactoElectronico xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <ArtefactoElectronico xsi:type="Celular">
-    <Precio>500</Precio>
-    <Nombre>Iphone 11</Nombre>
-    <Marca>Apple</Marca>
-    <TipoOrigen>AMERICANO</TipoOrigen>
-    <AsistenteVirtual>true</AsistenteVirtual>
-    <Bateria>35</Bateria>
-    <CantidadContactos>100</CantidadContactos>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Celular">
-    <Precio>250</Precio>
-    <Nombre>Galaxy A70</Nombre>
-    <Marca>Samsung</Marca>
-    <TipoOrigen>KOREANO</TipoOrigen>
-    <AsistenteVirtual>false</AsistenteVirtual>
-    <Bateria>89</Bateria>
-    <CantidadContactos>50</CantidadContactos>
-  </ArtefactoElectronico>
-  <ArtefactoElectronico xsi:type="Computadora">
-    <Precio>1100</Precio>
-    <Nombre>VivoBook 15</Nombre>
-    <Marca>ASUS</Marca>
-    <TipoOrigen>INTERNACIONAL</TipoOrigen>
-    <EsTactil>true</EsTactil>
-    <CantidadNucleos>4</CantidadNucleos>
-    <EspacioDiscoSSD>256</EspacioDiscoSSD>
-  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Computadora">
     <Precio>7000</Precio>
     <Nombre>Mac Book Pro</Nombre>
@@ -45,13 +18,40 @@
     <MemoriaTotal>825</MemoriaTotal>
     <VelocidadDescargaMB>200</VelocidadDescargaMB>
   </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Computadora">
+    <Precio>1100</Precio>
+    <Nombre>VivoBook 15</Nombre>
+    <Marca>ASUS</Marca>
+    <TipoOrigen>INTERNACIONAL</TipoOrigen>
+    <EsTactil>true</EsTactil>
+    <CantidadNucleos>4</CantidadNucleos>
+    <EspacioDiscoSSD>256</EspacioDiscoSSD>
+  </ArtefactoElectronico>
   <ArtefactoElectronico xsi:type="Consola">
-    <Precio>450</Precio>
+    <Precio>475</Precio>
     <Nombre>Switch</Nombre>
     <Marca>Nintendo</Marca>
     <TipoOrigen>CHINO</TipoOrigen>
     <AceptaDiscosFisicos>false</AceptaDiscosFisicos>
     <MemoriaTotal>500</MemoriaTotal>
     <VelocidadDescargaMB>150</VelocidadDescargaMB>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>250</Precio>
+    <Nombre>Galaxy A70</Nombre>
+    <Marca>Samsung</Marca>
+    <TipoOrigen>KOREANO</TipoOrigen>
+    <AsistenteVirtual>false</AsistenteVirtual>
+    <Bateria>89</Bateria>
+    <CantidadContactos>50</CantidadContactos>
+  </ArtefactoElectronico>
+  <ArtefactoElectronico xsi:type="Celular">
+    <Precio>45</Precio>
+    <Nombre>fdg</Nombre>
+    <Marca>trgtr</Marca>
+    <TipoOrigen>AMERICANO</TipoOrigen>
+    <AsistenteVirtual>true</AsistenteVirtual>
+    <Bateria>5</Bateria>
+    <CantidadContactos>200</CantidadContactos>
   </ArtefactoElectronico>
 </ArrayOfArtefactoElectronico>

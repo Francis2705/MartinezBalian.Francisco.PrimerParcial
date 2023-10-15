@@ -109,26 +109,6 @@ namespace Electronicos
         public static int OrdenarArtefactosPorNombreAscendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
             return String.Compare(art1.Nombre, art2.Nombre);
-            /*if (ascendente)
-            {
-                return String.Compare(art1.Nombre, art2.Nombre);
-            }*/
-            /*else
-            {
-                return String.Compare(art2.Nombre, art1.Nombre);
-            }*/
-            /*if (String.Compare(art1.Nombre, art2.Nombre) == 0)
-            {
-                return 0;
-            }
-            else if (String.Compare(art1.Nombre, art2.Nombre) == -1) //el primero es menor, la letra 'a' < 'b'
-            {
-                return -1;
-            }
-            else //la segunda es mayor
-            {
-                return 1;
-            }*/
         }
         public static int OrdenarArtefactosPorNombreDescendente(ArtefactoElectronico art1, ArtefactoElectronico art2)
         {
