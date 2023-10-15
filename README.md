@@ -10,4 +10,3 @@ Este CRUD representa una aplicacion diseñada para una empresa de productos elec
 
 # Diagrama Esquemático
 ![DiagramaEsquematico](diagrama_esquematico.png)
-Completar acaaaa
