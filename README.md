@@ -9,5 +9,8 @@ Me llamo Francisco Martinez Balian, tengo 19 años y aspiro a ser un gran progra
 # Funcionamiento
 Este CRUD representa una aplicacion diseñada para una empresa de productos electronicos. Permite agregar, modificar y eliminar distintos elementos electronicos de la lista, y no permite agregar dos productos iguales para evitar confusiones (no pueden tener ni el mismo nombre ni el mismo precio). Ademas, permite ordenar la lista, tanto por sus nombres como por sus precios, tiene un boton para mostrar las caracteristicas especificas de cada producto por si se quiere saber mas de este y por ultimo, contiene un visualizador, para ver un registro de quienes se loguearon.
 
-# Diagrama Esquemático
-![DiagramaEsquematico](diagrama_esquematico.png)
+# Diagrama Esquemático de clases
+![DiagramaClases](DiagramaClases.png)
+
+# Diagrama Esquemático de formularios
+![DiagramaFormularios](DiagramaFormularios.png)
