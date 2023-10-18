@@ -182,12 +182,13 @@ namespace Electronicos
         /// <returns>Retorna true si es de tipo celular</returns>
         public override bool Equals(object? obj)
         {
-            bool retorno = false;
-            if (obj is Celular)
-            {
-                retorno = true;
-            }
-            return retorno;
+            return base.Equals(obj);
+            //bool retorno = false;
+            //if (obj is Celular)
+            //{
+            //    retorno = true;
+            //}
+            //return retorno;
         }
         /// <summary>
         /// Sobrescritura del ToString()

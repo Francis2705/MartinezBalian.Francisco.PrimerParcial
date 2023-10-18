@@ -76,7 +76,7 @@ namespace CRUD_EmpresaElectronica
 
                             XmlSerializer serializer = new XmlSerializer(typeof(List<ArtefactoElectronico>));
 
-                            using (FileStream stream = new FileStream(fileName, FileMode.Create))
+                            using (FileStream stream = new FileStream(fileName, FileMode.Create)) //Ahora lo abro para escribir
                             {
                                 serializer.Serialize(stream, empresaElectronica.ProductosElectronicos);
                             }
@@ -101,12 +101,12 @@ namespace CRUD_EmpresaElectronica
         {
             UsuarioElectronico usuarioElectronico = FrmLogin.GetUsuarioElectronico();
 
-            lblUsuarioInfo.Text = $"Nombre: {usuarioElectronico.nombre}\nFecha: {DateTime.Now.ToString("yyyy-MM-dd")}";
+            this.lblUsuarioInfo.Text = $"Nombre: {usuarioElectronico.nombre}\nFecha: {DateTime.Now.ToString("yyyy-MM-dd")}";
 
-            cmBoxProductos.Items.Add("Celular");
-            cmBoxProductos.Items.Add("Computadora");
-            cmBoxProductos.Items.Add("Consola");
-            cmBoxProductos.DropDownStyle = ComboBoxStyle.DropDownList;
+            this.cmBoxProductos.Items.Add("Celular");
+            this.cmBoxProductos.Items.Add("Computadora");
+            this.cmBoxProductos.Items.Add("Consola");
+            this.cmBoxProductos.DropDownStyle = ComboBoxStyle.DropDownList;
 
             using (OpenFileDialog openDialog = new OpenFileDialog())
             {
@@ -118,9 +118,9 @@ namespace CRUD_EmpresaElectronica
 
                     try
                     {
-                        using (FileStream stream = new FileStream(fileName, FileMode.Open))
+                        using (FileStream stream = new FileStream(fileName, FileMode.Open)) //FileMode.Open es de solo lectura
                         {
-                            empresaElectronica.ProductosElectronicos = (List<ArtefactoElectronico>)serializer.Deserialize(stream);
+                            this.empresaElectronica.ProductosElectronicos = (List<ArtefactoElectronico>)serializer.Deserialize(stream);
                         }
                         this.ActualizarVisor();
                     }
@@ -173,19 +173,19 @@ namespace CRUD_EmpresaElectronica
         /// <param name="e">Representa un objeto de tipo EventArgs</param>
         private void btnOrdenar_Click(object sender, EventArgs e)
         {
-            if (rbNombreAscendentemente.Checked == true)
+            if (this.rbNombreAscendentemente.Checked == true)
             {
                 empresaElectronica.ProductosElectronicos.Sort(EmpresaElectronica.OrdenarArtefactosPorNombreAscendente);
             }
-            else if (rbNombreDescendentemente.Checked == true)
+            else if (this.rbNombreDescendentemente.Checked == true)
             {
                 empresaElectronica.ProductosElectronicos.Sort(EmpresaElectronica.OrdenarArtefactosPorNombreDescendente);
             }
-            else if (rbPrecioAscendentemente.Checked == true)
+            else if (this.rbPrecioAscendentemente.Checked == true)
             {
                 empresaElectronica.ProductosElectronicos.Sort(EmpresaElectronica.OrdenarArtefactosPorPrecioAscendente);
             }
-            else if (rbPrecioDescendentemente.Checked == true)
+            else if (this.rbPrecioDescendentemente.Checked == true)
             {
                 empresaElectronica.ProductosElectronicos.Sort(EmpresaElectronica.OrdenarArtefactosPorPrecioDescendente);
             }

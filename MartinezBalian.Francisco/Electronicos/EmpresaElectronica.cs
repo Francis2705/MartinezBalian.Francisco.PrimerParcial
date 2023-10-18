@@ -49,7 +49,11 @@ namespace Electronicos
         {
             foreach (ArtefactoElectronico artefacto in e.productosElectronicos)
             {
-                if (a == artefacto)
+                /*if (a == artefacto)
+                {
+                    return true;
+                }*/
+                if (a.Equals(artefacto))
                 {
                     return true;
                 }

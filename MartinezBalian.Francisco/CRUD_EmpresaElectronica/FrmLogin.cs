@@ -55,7 +55,7 @@ namespace CRUD_EmpresaElectronica
                 if (usuario.correo == txtBoxCorreo.Text && usuario.clave == txtBoxClave.Text)
                 {
                     usuarioValido = true;
-                    usuarioLogueado = usuario;
+                    FrmLogin.usuarioLogueado = usuario;
                     break;
                 }
             }

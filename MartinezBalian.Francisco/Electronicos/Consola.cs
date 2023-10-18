@@ -181,12 +181,13 @@ namespace Electronicos
         /// <returns>Retorna true si es de tipo consola</returns>
         public override bool Equals(object? obj)
         {
-            bool retorno = false;
-            if (obj is Consola)
-            {
-                retorno = true;
-            }
-            return retorno;
+            return base.Equals(obj);
+            //bool retorno = false;
+            //if (obj is Consola)
+            //{
+            //    retorno = true;
+            //}
+            //return retorno;
         }
         /// <summary>
         /// Sobrescritura del ToString()

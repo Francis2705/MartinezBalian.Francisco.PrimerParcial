@@ -39,8 +39,8 @@ namespace CRUD_EmpresaElectronica
                 info = sr.ReadToEnd();
             }
 
-            richTxtBoxInfoLogueos.ReadOnly = true;
-            richTxtBoxInfoLogueos.Text = info;
+            this.richTxtBoxInfoLogueos.ReadOnly = true;
+            this.richTxtBoxInfoLogueos.Text = info;
         }
     }
 }

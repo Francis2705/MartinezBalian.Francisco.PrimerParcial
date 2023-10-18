@@ -107,7 +107,7 @@ namespace Electronicos
         public abstract string MostrarCaracteristicasEspecificas();
 
         /// <summary>
-        /// Sobrecarga del operador ==, compara por igualdad de nonmbre y precio
+        /// Sobrecarga del operador ==, compara por igualdad de nombre y precio
         /// </summary>
         /// <param name="art1">Representa un artefacto electronico</param>
         /// <param name="art2">Representa otro artefacto electronico</param>
